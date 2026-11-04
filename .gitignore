@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+.venvs/
+venv/
+
+# macOS
+.DS_Store
+
+# Local datasets and model weights
+data/
+datasets/
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+# Local secrets and environment configuration
+.env
+.env.*
+!.env.example
+
+# Local research repository clones
+research/repositories/*
+
+# Cam2BEV reproduction images: retain locally pending dataset
+# provenance and redistribution review
+experiments/cam2bev_ipm/**/*.png
+experiments/cam2bev_ipm/**/*.jpg
+experiments/cam2bev_ipm/**/*.jpeg
