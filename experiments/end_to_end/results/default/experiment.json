@@ -1,0 +1,73 @@
+{
+ "rig": "configs/rig_cam2bev_1frlr.yaml",
+ "image_scale": 0.5,
+ "noise": {
+  "boundary_jitter_px": 1,
+  "object_dropout": 0.02,
+  "spurious_blob_rate": 0.1
+ },
+ "closed_loop_seeds": [
+  100,
+  110
+ ],
+ "calibration": {
+  "fit_seeds": [
+   200,
+   220
+  ],
+  "test_seeds": [
+   230,
+   240
+  ]
+ },
+ "modes": {
+  "blind_no_filter": {
+   "nominal": "blind",
+   "filter": false
+  },
+  "idm_no_filter": {
+   "nominal": "idm",
+   "filter": false
+  },
+  "blind_filter": {
+   "nominal": "blind",
+   "filter": true
+  },
+  "filter": {
+   "nominal": "idm",
+   "filter": true,
+   "measure_perception": true
+  },
+  "filter_calibrated": {
+   "nominal": "idm",
+   "filter": true,
+   "calibrated": true
+  },
+  "filter_unknown_as_free": {
+   "nominal": "idm",
+   "filter": true,
+   "unknown_as_free": true
+  },
+  "filter_oracle_tracks": {
+   "nominal": "idm",
+   "filter": true,
+   "oracle_tracks": true
+  },
+  "filter_front_dropout": {
+   "nominal": "idm",
+   "filter": true,
+   "front_dropout": [
+    2.0,
+    1.5
+   ]
+  },
+  "idm_no_filter_front_dropout": {
+   "nominal": "idm",
+   "filter": false,
+   "front_dropout": [
+    2.0,
+    1.5
+   ]
+  }
+ }
+}

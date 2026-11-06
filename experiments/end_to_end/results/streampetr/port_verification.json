@@ -1,0 +1,77 @@
+{
+ "load": {
+  "checkpoint_tensors": 591,
+  "loaded": 573,
+  "unused": 18,
+  "missing": [],
+  "unexpected": [],
+  "sha256": "72900a1c9bfbbd65dd52165b46e2de4931d5a4a7a04e58bf68a9add80cdd2c5f"
+ },
+ "scenes": [
+  "scene-0103",
+  "scene-0916"
+ ],
+ "scene_status": "mini_val, previously seen: 0103 was a tuning scene, 0916 was in the reported held-out set",
+ "classes": [
+  "car",
+  "truck",
+  "construction_vehicle",
+  "bus",
+  "trailer",
+  "barrier",
+  "motorcycle",
+  "bicycle",
+  "pedestrian",
+  "traffic_cone"
+ ],
+ "cameras": [
+  "CAM_FRONT",
+  "CAM_FRONT_RIGHT",
+  "CAM_FRONT_LEFT",
+  "CAM_BACK",
+  "CAM_BACK_LEFT",
+  "CAM_BACK_RIGHT"
+ ],
+ "port": {
+  "matches": 2158,
+  "confident": 3392,
+  "annotated": 2460,
+  "recall": 0.8772357723577235,
+  "precision": 0.6362028301886793,
+  "mean_center_error_m": 0.5639456652966721,
+  "mean_vertical_center_error_m": 0.08313442985627863,
+  "median_length_ratio": 0.9815563302315963,
+  "median_width_ratio": 1.028935410613521,
+  "median_height_ratio": 0.9823006504870885,
+  "median_yaw_error_deg": 2.921483804376238,
+  "mean_velocity_error_mps": 0.1697773223613101
+ },
+ "control_no_temporal_memory": {
+  "matches": 1976,
+  "confident": 3866,
+  "annotated": 2460,
+  "recall": 0.8032520325203252,
+  "precision": 0.5111226073460942,
+  "mean_center_error_m": 0.7536943140212341,
+  "mean_vertical_center_error_m": 0.09085121361032711,
+  "median_length_ratio": 0.9900566248316208,
+  "median_width_ratio": 1.0370429535617687,
+  "median_height_ratio": 0.9892349555844167,
+  "median_yaw_error_deg": 3.4907093623574563,
+  "mean_velocity_error_mps": 0.39850659120584264
+ },
+ "control_calibration_shuffled": {
+  "matches": 110,
+  "confident": 3263,
+  "annotated": 2460,
+  "recall": 0.044715447154471545,
+  "precision": 0.03371130861170702,
+  "mean_center_error_m": 1.2993271551783188,
+  "mean_vertical_center_error_m": 0.4560144005273092,
+  "median_length_ratio": 1.0107806449487575,
+  "median_width_ratio": 1.0724580757120292,
+  "median_height_ratio": 1.0002391007545817,
+  "median_yaw_error_deg": 108.79553314678384,
+  "mean_velocity_error_mps": 2.4460738862697324
+ }
+}

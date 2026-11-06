@@ -1,0 +1,20 @@
+# Isolated ROS 2 Jazzy for macOS arm64 from RoboStack. Nothing is installed globally.
+[workspace]
+name = "foresightbev-ros2"
+channels = ["robostack-jazzy", "conda-forge"]
+platforms = ["osx-arm64"]
+
+[dependencies]
+python = "3.12.*"
+ros-jazzy-rclpy = "*"
+ros-jazzy-std-msgs = "*"
+ros-jazzy-nav-msgs = "*"
+ros-jazzy-geometry-msgs = "*"
+ros-jazzy-sensor-msgs = "*"
+ros-jazzy-ros2cli = "*"
+ros-jazzy-ros2topic = "*"
+ros-jazzy-rmw-cyclonedds-cpp = "*"
+numpy = "*"
+scipy = "*"
+pyyaml = "*"
+py-opencv = "*"

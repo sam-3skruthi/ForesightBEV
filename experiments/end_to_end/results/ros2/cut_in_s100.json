@@ -1,0 +1,726 @@
+{
+ "transport": "ros2",
+ "ros_distro": "jazzy",
+ "scenario": "cut_in",
+ "seed": 100,
+ "frames": 70,
+ "collided_with": null,
+ "ego_x": 83.4977719976634,
+ "t": 14.000000000000064,
+ "wall_s": 213.8985342500091,
+ "decisions": [
+  {
+   "frame": 0,
+   "t": 0.0,
+   "status": "fallback",
+   "selected": "comfort_stop",
+   "reasons": [
+    "NOMINAL_UNKNOWN_CORRIDOR",
+    "NO_ADMISSIBLE_CANDIDATE",
+    "FALLBACK_COMFORT_STOP"
+   ],
+   "fallback": "comfort_stop"
+  },
+  {
+   "frame": 1,
+   "t": 0.2,
+   "status": "fallback",
+   "selected": "comfort_stop",
+   "reasons": [
+    "NOMINAL_UNKNOWN_CORRIDOR",
+    "NO_ADMISSIBLE_CANDIDATE",
+    "FALLBACK_COMFORT_STOP"
+   ],
+   "fallback": "comfort_stop"
+  },
+  {
+   "frame": 2,
+   "t": 0.4,
+   "status": "fallback",
+   "selected": "emergency_stop",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED",
+    "NO_ADMISSIBLE_CANDIDATE",
+    "FALLBACK_EMERGENCY_STOP"
+   ],
+   "fallback": "emergency_stop"
+  },
+  {
+   "frame": 3,
+   "t": 0.6000000000000001,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 4,
+   "t": 0.8,
+   "status": "modify",
+   "selected": "lane+0.0_v0.7",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 5,
+   "t": 1.0,
+   "status": "modify",
+   "selected": "lane+0.0_v0.7",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 6,
+   "t": 1.2,
+   "status": "modify",
+   "selected": "lane+0.0_v0.7",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 7,
+   "t": 1.4,
+   "status": "modify",
+   "selected": "lane+0.0_v0.7",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 8,
+   "t": 1.6,
+   "status": "modify",
+   "selected": "lane+0.0_v0.7",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 9,
+   "t": 1.8,
+   "status": "modify",
+   "selected": "lane+0.0_v0.7",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 10,
+   "t": 2.0,
+   "status": "modify",
+   "selected": "lane+0.0_v0.7",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 11,
+   "t": 2.2,
+   "status": "modify",
+   "selected": "lane+0.0_v0.7",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 12,
+   "t": 2.4,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 13,
+   "t": 2.6,
+   "status": "modify",
+   "selected": "lane+0.0_v0.7",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 14,
+   "t": 2.8,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 15,
+   "t": 3.0,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 16,
+   "t": 3.2,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 17,
+   "t": 3.4,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 18,
+   "t": 3.6,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 19,
+   "t": 3.8,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 20,
+   "t": 4.0,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 21,
+   "t": 4.2,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 22,
+   "t": 4.4,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 23,
+   "t": 4.6,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 24,
+   "t": 4.8,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 25,
+   "t": 5.0,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 26,
+   "t": 5.2,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 27,
+   "t": 5.4,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 28,
+   "t": 5.6,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 29,
+   "t": 5.8,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 30,
+   "t": 6.0,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 31,
+   "t": 6.2,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 32,
+   "t": 6.4,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 33,
+   "t": 6.6,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 34,
+   "t": 6.8,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 35,
+   "t": 7.0,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 36,
+   "t": 7.2,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 37,
+   "t": 7.4,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 38,
+   "t": 7.6,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 39,
+   "t": 7.8,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 40,
+   "t": 8.0,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 41,
+   "t": 8.2,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 42,
+   "t": 8.4,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 43,
+   "t": 8.6,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 44,
+   "t": 8.8,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 45,
+   "t": 9.0,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 46,
+   "t": 9.2,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 47,
+   "t": 9.4,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 48,
+   "t": 9.6,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 49,
+   "t": 9.8,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 50,
+   "t": 10.0,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 51,
+   "t": 10.2,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 52,
+   "t": 10.4,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 53,
+   "t": 10.6,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 54,
+   "t": 10.8,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 55,
+   "t": 11.0,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 56,
+   "t": 11.2,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 57,
+   "t": 11.4,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 58,
+   "t": 11.6,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 59,
+   "t": 11.8,
+   "status": "modify",
+   "selected": "lane+3.5_v1.0",
+   "reasons": [
+    "NOMINAL_STATIC_COLLISION",
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 60,
+   "t": 12.0,
+   "status": "modify",
+   "selected": "lane+3.5_v1.0",
+   "reasons": [
+    "NOMINAL_STATIC_COLLISION",
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 61,
+   "t": 12.2,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 62,
+   "t": 12.4,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 63,
+   "t": 12.6,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 64,
+   "t": 12.8,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 65,
+   "t": 13.0,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 66,
+   "t": 13.2,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 67,
+   "t": 13.4,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 68,
+   "t": 13.6,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  },
+  {
+   "frame": 69,
+   "t": 13.8,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null
+  }
+ ],
+ "rmw": "rmw_fastrtps_cpp",
+ "matches_in_process": true,
+ "in_process_frames": 70,
+ "in_process_ego_x": 83.4977719976635,
+ "first_mismatch_frame": null
+}

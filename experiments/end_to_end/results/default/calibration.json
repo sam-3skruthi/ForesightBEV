@@ -1,0 +1,130 @@
+{
+ "event": "inflated ego footprint overlaps a true agent within 3 s, excluding overlap at t=0",
+ "positive_class": "event occurred under the counterfactual candidate",
+ "fit_rows": 51350,
+ "test_rows": 25740,
+ "fit_seeds": [
+  200,
+  220
+ ],
+ "test_seeds": [
+  230,
+  240
+ ],
+ "test_base_rate": 0.09553224553224553,
+ "raw": {
+  "brier": 0.07737023176476301,
+  "nll": 0.5786510327133351,
+  "ece_10_equal_width": 0.07835081585081587,
+  "auroc": 0.9171376949394143,
+  "reliability": [
+   {
+    "low": 0.0,
+    "high": 0.1,
+    "count": 20989,
+    "mean_predicted": 0.0015201415026918862,
+    "observed_frequency": 0.013816761160607937
+   },
+   {
+    "low": 0.1,
+    "high": 0.2,
+    "count": 240,
+    "mean_predicted": 0.157421875,
+    "observed_frequency": 0.10416666666666667
+   },
+   {
+    "low": 0.2,
+    "high": 0.3,
+    "count": 244,
+    "mean_predicted": 0.2492315573770492,
+    "observed_frequency": 0.13934426229508196
+   },
+   {
+    "low": 0.3,
+    "high": 0.4,
+    "count": 219,
+    "mean_predicted": 0.3441780821917808,
+    "observed_frequency": 0.136986301369863
+   },
+   {
+    "low": 0.4,
+    "high": 0.5,
+    "count": 198,
+    "mean_predicted": 0.43892045454545453,
+    "observed_frequency": 0.1414141414141414
+   },
+   {
+    "low": 0.5,
+    "high": 0.6,
+    "count": 189,
+    "mean_predicted": 0.5512566137566137,
+    "observed_frequency": 0.2222222222222222
+   },
+   {
+    "low": 0.6,
+    "high": 0.7,
+    "count": 82,
+    "mean_predicted": 0.6543445121951219,
+    "observed_frequency": 0.12195121951219512
+   },
+   {
+    "low": 0.7,
+    "high": 0.8,
+    "count": 132,
+    "mean_predicted": 0.748342803030303,
+    "observed_frequency": 0.2196969696969697
+   },
+   {
+    "low": 0.8,
+    "high": 0.9,
+    "count": 157,
+    "mean_predicted": 0.8507165605095541,
+    "observed_frequency": 0.34394904458598724
+   },
+   {
+    "low": 0.9,
+    "high": 1.0,
+    "count": 3290,
+    "mean_predicted": 0.9959251519756839,
+    "observed_frequency": 0.5826747720364741
+   }
+  ]
+ },
+ "calibrated": {
+  "brier": 0.04907413463616355,
+  "nll": 0.1664595913073672,
+  "ece_10_equal_width": 0.004148789627498504,
+  "auroc": 0.917138943891801,
+  "reliability": [
+   {
+    "low": 0.0,
+    "high": 0.1,
+    "count": 20877,
+    "mean_predicted": 0.01270899775722983,
+    "observed_frequency": 0.013124491066724146
+   },
+   {
+    "low": 0.1,
+    "high": 0.2,
+    "count": 1260,
+    "mean_predicted": 0.11950476237407423,
+    "observed_frequency": 0.14285714285714285
+   },
+   {
+    "low": 0.2,
+    "high": 0.3,
+    "count": 539,
+    "mean_predicted": 0.25873119888458895,
+    "observed_frequency": 0.2820037105751391
+   },
+   {
+    "low": 0.6,
+    "high": 0.7,
+    "count": 3064,
+    "mean_predicted": 0.6230899830220711,
+    "observed_frequency": 0.6047650130548303
+   }
+  ]
+ },
+ "note": "Rows within an episode are correlated, so effective sample size is below test_rows."
+}

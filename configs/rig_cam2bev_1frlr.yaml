@@ -1,0 +1,10 @@
+# Calibration copied from Cam2BEV preprocessing/camera_configs/1_FRLR (MIT),
+# commit 5691703. Four 120-degree cameras; images are 964x604.
+name: cam2bev_1frlr
+width: 964
+height: 604
+cameras:
+  front: {fx: 278.283, fy: 408.1295, px: 482.0, py: 302.0, yaw: 0.0, pitch: 0.0, roll: 0.0, XCam: 1.7, YCam: 0.0, ZCam: 1.4}
+  rear: {fx: 278.283, fy: 408.1295, px: 482.0, py: 302.0, yaw: 180.0, pitch: 0.0, roll: 0.0, XCam: -0.6, YCam: 0.0, ZCam: 1.4}
+  left: {fx: 278.283, fy: 408.1295, px: 482.0, py: 302.0, yaw: 90.0, pitch: 0.0, roll: 0.0, XCam: 0.5, YCam: 0.5, ZCam: 1.5}
+  right: {fx: 278.283, fy: 408.1295, px: 482.0, py: 302.0, yaw: -90.0, pitch: 0.0, roll: 0.0, XCam: 0.5, YCam: -0.5, ZCam: 1.5}

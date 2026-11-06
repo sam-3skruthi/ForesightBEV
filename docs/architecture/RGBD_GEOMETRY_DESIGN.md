@@ -1,6 +1,6 @@
 # Metric RGB-D Bird's-Eye-View Geometry Engine Design
 
-**Project:** ForesightBEV Stage 1 Architecture
+**Project:** Tavyra Stage 1 Architecture
 **Document:** `docs/architecture/RGBD_GEOMETRY_DESIGN.md`
 **Status:** Approved Technical Design Specification
 **Date:** November 2026
@@ -11,7 +11,7 @@
 
 The preceding audit of `Cam2BEV` proved that 2D Inverse Perspective Mapping (IPM) fundamentally collapses under non-flat geometry ($Z \ne 0$). By assuming that all visual rays terminate on a flat planar road, IPM radially smears upright 3D objects (pedestrians, vehicles, walls) into severe streaks over 10–20 meters of ground plane.
 
-ForesightBEV eliminates planar homographies entirely. Instead, ForesightBEV constructs a **robot-centered metric Bird's-Eye-View (BEV) representation** via explicit 3D back-projection of synchronized depth measurements:
+Tavyra eliminates planar homographies entirely. Instead, Tavyra constructs a **robot-centered metric Bird's-Eye-View (BEV) representation** via explicit 3D back-projection of synchronized depth measurements:
 
 $$\text{Raw Depth Map } D(u, v) \xrightarrow[\text{Intrinsics } K]{\text{Back-Projection}} \text{Metric 3D Cloud } p_{\text{cam}} \xrightarrow[\text{Extrinsics } T]{\text{Rigid Transform}} p_{\text{base}} \xrightarrow[\text{Height Banding}]{\text{3D-Aware Raster}} \text{Multi-Layer Metric BEV}$$
 
@@ -19,7 +19,7 @@ $$\text{Raw Depth Map } D(u, v) \xrightarrow[\text{Intrinsics } K]{\text{Back-Pr
 
 ## 2. Multi-Layer Metric BEV Representation
 
-Rather than compressing environment evidence into an ambiguous single-channel binary image, ForesightBEV defines a **structured multi-layer tensor** $\mathcal{M} \in \mathbb{R}^{H \times W \times C}$ centered on the mobile robot base.
+Rather than compressing environment evidence into an ambiguous single-channel binary image, Tavyra defines a **structured multi-layer tensor** $\mathcal{M} \in \mathbb{R}^{H \times W \times C}$ centered on the mobile robot base.
 
 ### 2.1 Grid Spatial Parameters
 The BEV grid is defined in the robot base frame $\mathcal{F}_{\text{base}}$ ($X$ forward, $Y$ left, $Z$ up):
@@ -61,7 +61,7 @@ $$\mathcal{M}(r, c) = \begin{bmatrix} L_{\text{occ}}(r, c) & N_{\text{free}}(r, 
 
 ## 3. Ground Plane vs. Obstacle Separation
 
-A central failure of naive depth projection is marking the traversable floor as an impenetrable obstacle. ForesightBEV enforces rigorous vertical spatial segmentation.
+A central failure of naive depth projection is marking the traversable floor as an impenetrable obstacle. Tavyra enforces rigorous vertical spatial segmentation.
 
 ```
        +Z_base
@@ -108,7 +108,7 @@ For every valid depth measurement $p_{\text{base}}$:
 ### 4.2 3D-Aware Ray Traversal
 A critical flaw in standard 2D grid ray-casting occurs when an elevated camera looks over a low obstacle. If a ray is cast purely in 2D $(x, y)$, a ray passing at height $Z = 1.2\text{ m}$ through the air will clear a low $0.1\text{ m}$ box on the floor beneath it, erasing the obstacle!
 
-ForesightBEV implements **3D-Aware Ray Traversal**:
+Tavyra implements **3D-Aware Ray Traversal**:
 1. The 3D line segment $L(s) = O_{\text{base}} + s (p_{\text{base}} - O_{\text{base}})$ for $s \in [0, 1)$ is sampled via a 3D Digital Differential Analyzer (3D DDA) or parametric step algorithm.
 2. For each intermediate point along the ray, the base height $Z(s)$ is evaluated.
 3. A BEV grid cell $(r, c)$ only receives a free-space clearing update if the ray height at that cell falls **within the robot collision volume**:

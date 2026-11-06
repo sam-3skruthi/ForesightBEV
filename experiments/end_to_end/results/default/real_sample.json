@@ -1,0 +1,35 @@
+{
+ "input": "Cam2BEV 1_FRLR example, one frame, four simulated semantic cameras",
+ "grid": [
+  280,
+  176,
+  0.25
+ ],
+ "state_fractions": {
+  "INVALID": 0.003246753246753247,
+  "FREE": 0.6065949675324676,
+  "OCCUPIED": 0.022362012987012986,
+  "UNKNOWN": 0.36734983766233764,
+  "OUTSIDE_FOV": 0.0004464285714285714
+ },
+ "free_precision_gt_ground": 0.9677851001906801,
+ "ground_recall_as_free": 0.7601955013664073,
+ "false_free_rate_gt_obstacle": 0.08703904555314533,
+ "gt_obstacle_marked_occupied": 0.08035068691250905,
+ "gt_obstacle_marked_unknown": 0.8326102675343456,
+ "occupied_precision_gt_obstacle": 0.8067150635208712,
+ "vehicle_gt_marked_occupied_as_dynamic": 0.2453102453102453,
+ "visibility_agreement_all_cells": {
+  "positive_class": "officially occluded cell",
+  "precision": 0.45671988068275976,
+  "recall": 0.9804340092493774,
+  "iou": 0.4525947011167068
+ },
+ "visibility_agreement_excluding_static_cells": {
+  "positive_class": "officially occluded cell",
+  "precision": 0.9088008800880089,
+  "recall": 0.9804177545691906,
+  "iou": 0.8925985953538628
+ },
+ "note": "One frame only. Not a generalisation claim."
+}

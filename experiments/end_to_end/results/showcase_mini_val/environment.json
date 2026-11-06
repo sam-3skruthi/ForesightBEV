@@ -1,0 +1,12 @@
+{
+ "python": "3.12.15",
+ "numpy": "2.5.4",
+ "opencv": "5.0.0",
+ "platform": "macOS-26.6-arm64-arm-64bit",
+ "machine": "arm64",
+ "foresightbev": "0.3.0",
+ "git_commit": "aaef1cb63179d53dc90021d0e1bce6a4e89b8815",
+ "git_dirty": true,
+ "source_sha256": "08d969cfcc11f316c9a522b1e2c006a0d5f8bee871c573ae96d2cb42957c8258",
+ "created_unix": 1793898116.366585
+}

@@ -1,0 +1,119 @@
+{
+ "scenes": [
+  "scene-0103",
+  "scene-0916"
+ ],
+ "match_m": 2.0,
+ "max_range_m": 40.0,
+ "min_visibility": 2,
+ "operating_score": 0.3,
+ "per_class": {
+  "car": {
+   "annotated": 1237,
+   "predicted": 1407,
+   "matched": 1146,
+   "recall": 0.9264349232012935,
+   "precision": 0.814498933901919
+  },
+  "truck": {
+   "annotated": 70,
+   "predicted": 71,
+   "matched": 68,
+   "recall": 0.9714285714285714,
+   "precision": 0.9577464788732394
+  },
+  "construction_vehicle": {
+   "annotated": 0,
+   "predicted": 0,
+   "matched": 0,
+   "recall": null,
+   "precision": null
+  },
+  "bus": {
+   "annotated": 29,
+   "predicted": 30,
+   "matched": 29,
+   "recall": 1.0,
+   "precision": 0.9666666666666667
+  },
+  "trailer": {
+   "annotated": 0,
+   "predicted": 0,
+   "matched": 0,
+   "recall": null,
+   "precision": null
+  },
+  "motorcycle": {
+   "annotated": 163,
+   "predicted": 142,
+   "matched": 113,
+   "recall": 0.6932515337423313,
+   "precision": 0.795774647887324
+  },
+  "bicycle": {
+   "annotated": 29,
+   "predicted": 60,
+   "matched": 23,
+   "recall": 0.7931034482758621,
+   "precision": 0.38333333333333336
+  },
+  "pedestrian": {
+   "annotated": 931,
+   "predicted": 1055,
+   "matched": 774,
+   "recall": 0.8313641245972073,
+   "precision": 0.7336492890995261
+  }
+ },
+ "score_sweep_reporting_only": {
+  "0.1": {
+   "annotated": 2459,
+   "predicted": 8929,
+   "matched": 2370,
+   "recall": 0.9638064253761692,
+   "precision": 0.2654272594915444
+  },
+  "0.2": {
+   "annotated": 2459,
+   "predicted": 4799,
+   "matched": 2284,
+   "recall": 0.9288328588857259,
+   "precision": 0.4759324859345697
+  },
+  "0.3": {
+   "annotated": 2459,
+   "predicted": 2765,
+   "matched": 2153,
+   "recall": 0.8755591703944693,
+   "precision": 0.7786618444846293
+  },
+  "0.4": {
+   "annotated": 2459,
+   "predicted": 2191,
+   "matched": 1981,
+   "recall": 0.8056120374135828,
+   "precision": 0.9041533546325878
+  },
+  "0.5": {
+   "annotated": 2459,
+   "predicted": 1912,
+   "matched": 1807,
+   "recall": 0.7348515656771045,
+   "precision": 0.9450836820083682
+  },
+  "0.6": {
+   "annotated": 2459,
+   "predicted": 1735,
+   "matched": 1675,
+   "recall": 0.6811712078080521,
+   "precision": 0.9654178674351584
+  },
+  "0.7": {
+   "annotated": 2459,
+   "predicted": 1547,
+   "matched": 1516,
+   "recall": 0.6165107767385116,
+   "precision": 0.9799612152553329
+  }
+ }
+}

@@ -1,0 +1,15 @@
+# Overrides for PipelineConfig. Everything else keeps the defaults in code.
+# Unknown keys are rejected at load time.
+safety:
+  max_event_score: 0.10        # Reject plans above this. A score, not a probability, unless a calibrator is applied.
+  max_perception_age_s: 0.5    # Older perception is treated as stale and forces a fallback.
+  min_healthy_cameras: 1
+  hold_after_fallback_s: 1.0
+risk:
+  phantom_speed: 1.5           # Assumed speed of an unseen agent leaving unobserved space, m/s.
+  stop_decel: 4.0              # Deceleration assumed by the stopping rule, m/s^2.
+  safety_margin: 0.3           # Footprint inflation per side, m.
+forecast:
+  horizon_s: 3.0
+  step_s: 0.25
+  n_samples: 32

@@ -38,3 +38,21 @@ research/repositories/*
 experiments/cam2bev_ipm/**/*.png
 experiments/cam2bev_ipm/**/*.jpg
 experiments/cam2bev_ipm/**/*.jpeg
+
+# Tavyra run outputs: images derive from Cam2BEV data with its own terms
+experiments/end_to_end/runs/
+frontend/node_modules/
+frontend/dist/
+.tools/
+.pixi/
+experiments/end_to_end/models/
+experiments/end_to_end/logs/
+experiments/end_to_end/uploads/
+experiments/end_to_end/sequences/
+experiments/end_to_end/jobs/
+experiments/end_to_end/baselines/
+
+# Local tooling and prompts
+.claude/
+CLAUDE_CODE_DESKTOP_EXECUTION_PROMPT.md
+*.log

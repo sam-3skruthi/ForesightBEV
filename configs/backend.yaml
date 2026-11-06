@@ -1,0 +1,8 @@
+# Backend settings. Any key can be overridden by FORESIGHTBEV_<KEY_IN_CAPITALS>.
+data_dir: experiments/end_to_end
+nuscenes_root: research/datasets/nuscenes   # Folder holding v1.0-mini/, samples/ and sweeps/.
+nuscenes_version: v1.0-mini
+segmentation_model: experiments/end_to_end/models/segformer-b2-cityscapes
+pipeline_config: configs/pipeline_default.yaml
+log_level: INFO
+max_upload_bytes: 33554432

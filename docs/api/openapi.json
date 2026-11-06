@@ -1,0 +1,4660 @@
+{
+ "openapi": "3.1.0",
+ "info": {
+  "title": "ForesightBEV",
+  "description": "Backend for stored and freshly computed pipeline outputs. Observability only, never in a control path.",
+  "version": "0.3.0"
+ },
+ "paths": {
+  "/api/v1/sequences": {
+   "get": {
+    "summary": "Real driving sequences and their stored runs",
+    "operationId": "sequences_api_v1_sequences_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "items": {
+          "$ref": "#/components/schemas/SequenceSummary"
+         },
+         "type": "array",
+         "title": "Response Sequences Api V1 Sequences Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/timeline": {
+   "get": {
+    "summary": "One row per frame",
+    "operationId": "timeline_api_v1_runs__run__timeline_get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "$ref": "#/components/schemas/TimelineRow"
+         },
+         "title": "Response Timeline Api V1 Runs  Run  Timeline Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/frames/{frame}/record": {
+   "get": {
+    "summary": "Everything stored for one frame",
+    "operationId": "frame_record_api_v1_runs__run__frames__frame__record_get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "additionalProperties": true,
+         "title": "Response Frame Record Api V1 Runs  Run  Frames  Frame  Record Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/frames/{frame}/cameras": {
+   "get": {
+    "summary": "Camera status, timing and calibration",
+    "operationId": "camera_views_api_v1_runs__run__frames__frame__cameras_get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "$ref": "#/components/schemas/CameraView"
+         },
+         "title": "Response Camera Views Api V1 Runs  Run  Frames  Frame  Cameras Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/frames/{frame}/image/{camera}": {
+   "get": {
+    "summary": "The real camera image for this frame",
+    "operationId": "camera_image_api_v1_runs__run__frames__frame__image__camera__get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     },
+     {
+      "name": "camera",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Camera"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       },
+       "image/jpeg": {}
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/frames/{frame}/layer/{layer}": {
+   "get": {
+    "summary": "BEV preview: bev, bev_original, coverage, ipm, forecast",
+    "operationId": "layer_image_api_v1_runs__run__frames__frame__layer__layer__get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     },
+     {
+      "name": "layer",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Layer"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       },
+       "image/png": {}
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/frames/{frame}/layer/{layer}/{camera}": {
+   "get": {
+    "summary": "Per-camera view: labels, projection",
+    "operationId": "camera_layer_api_v1_runs__run__frames__frame__layer__layer___camera__get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     },
+     {
+      "name": "layer",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Layer"
+      }
+     },
+     {
+      "name": "camera",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Camera"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       },
+       "image/png": {}
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/tracks": {
+   "get": {
+    "summary": "Track histories across the run, world frame",
+    "operationId": "track_histories_api_v1_runs__run__tracks_get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "$ref": "#/components/schemas/TrackHistory"
+         },
+         "title": "Response Track Histories Api V1 Runs  Run  Tracks Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/frames/{frame}/plan": {
+   "post": {
+    "summary": "Evaluate a plan by target speed and lateral offset, using this run's configuration",
+    "operationId": "evaluate_plan_api_v1_runs__run__frames__frame__plan_post",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/PlanRequest"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/RiskResponse"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/evaluation": {
+   "get": {
+    "summary": "All evaluation results, labelled by data source and validity",
+    "operationId": "evaluation_api_v1_evaluation_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "additionalProperties": true,
+         "type": "object",
+         "title": "Response Evaluation Api V1 Evaluation Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/system": {
+   "get": {
+    "summary": "Backend, ROS, model and dataset availability",
+    "operationId": "system_api_v1_system_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "additionalProperties": true,
+         "type": "object",
+         "title": "Response System Api V1 System Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/config/pipeline/{name}": {
+   "get": {
+    "summary": "Read one pipeline configuration. Read-only.",
+    "operationId": "pipeline_config_file_api_v1_config_pipeline__name__get",
+    "parameters": [
+     {
+      "name": "name",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Name"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ConfigCheck"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/health": {
+   "get": {
+    "summary": "Liveness: the process is serving requests",
+    "operationId": "health_api_v1_health_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Health"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "Conflict",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/status": {
+   "get": {
+    "summary": "Readiness: configuration, assets and active work",
+    "operationId": "status_api_v1_status_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SystemStatus"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "Conflict",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/config/pipeline": {
+   "get": {
+    "summary": "Effective pipeline configuration",
+    "operationId": "get_pipeline_config_api_v1_config_pipeline_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ConfigCheck"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "Conflict",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/config/validate": {
+   "post": {
+    "summary": "Validate overrides without applying them",
+    "operationId": "validate_config_api_v1_config_validate_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "additionalProperties": true,
+        "type": "object",
+        "title": "Values"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ConfigCheck"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "Conflict",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/datasets": {
+   "get": {
+    "summary": "Inputs available on this machine",
+    "operationId": "list_datasets_api_v1_datasets_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "items": {
+          "$ref": "#/components/schemas/DatasetSummary"
+         },
+         "type": "array",
+         "title": "Response List Datasets Api V1 Datasets Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "Conflict",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/datasets/nuscenes/scenes": {
+   "get": {
+    "summary": "Scenes in the configured nuScenes root",
+    "operationId": "nuscenes_scenes_api_v1_datasets_nuscenes_scenes_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "items": {
+          "$ref": "#/components/schemas/SceneSummary"
+         },
+         "type": "array",
+         "title": "Response Nuscenes Scenes Api V1 Datasets Nuscenes Scenes Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "Conflict",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/datasets/{dataset}/calibration": {
+   "get": {
+    "summary": "Validated calibration for a dataset",
+    "operationId": "dataset_calibration_api_v1_datasets__dataset__calibration_get",
+    "parameters": [
+     {
+      "name": "dataset",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Dataset"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/CalibrationStatus"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/uploads/{upload}/frames/{frame}/{camera}": {
+   "put": {
+    "summary": "Ingest one colour-coded semantic PNG for the Cam2BEV rig",
+    "operationId": "upload_frame_api_v1_uploads__upload__frames__frame___camera__put",
+    "parameters": [
+     {
+      "name": "upload",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Upload"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     },
+     {
+      "name": "camera",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Camera"
+      }
+     }
+    ],
+    "responses": {
+     "201": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/FrameUploadResult"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/uploads/{upload}/finalize": {
+   "post": {
+    "summary": "Turn uploaded frames into a label sequence",
+    "operationId": "finalize_upload_api_v1_uploads__upload__finalize_post",
+    "parameters": [
+     {
+      "name": "upload",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Upload"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/FinalizeRequest"
+       }
+      }
+     }
+    },
+    "responses": {
+     "201": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/DatasetSummary"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs": {
+   "get": {
+    "summary": "Recorded pipeline runs",
+    "operationId": "list_runs_api_v1_runs_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "items": {
+          "$ref": "#/components/schemas/RunSummary"
+         },
+         "type": "array",
+         "title": "Response List Runs Api V1 Runs Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "Conflict",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}": {
+   "get": {
+    "summary": "One run with provenance and environment",
+    "operationId": "get_run_api_v1_runs__run__get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/RunDetail"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/frames/{frame}/bev": {
+   "get": {
+    "summary": "Stage 2 BEV projection",
+    "operationId": "bev_output_api_v1_runs__run__frames__frame__bev_get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/BevOutput"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/frames/{frame}/occupancy": {
+   "get": {
+    "summary": "Stage 3 occupancy with explicit states and reliability",
+    "operationId": "occupancy_output_api_v1_runs__run__frames__frame__occupancy_get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     },
+     {
+      "name": "include_voxels",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "boolean",
+       "default": false,
+       "title": "Include Voxels"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/OccupancyOutput"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/frames/{frame}/perception": {
+   "get": {
+    "summary": "Stage 4 detections and tracks",
+    "operationId": "perception_output_api_v1_runs__run__frames__frame__perception_get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/PerceptionOutput"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/frames/{frame}/forecast": {
+   "get": {
+    "summary": "Stage 5 forecast with explicit timing",
+    "operationId": "forecast_output_api_v1_runs__run__frames__frame__forecast_get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ForecastOutput"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/frames/{frame}/decision": {
+   "get": {
+    "summary": "Stage 6 stored decision with candidate evidence",
+    "operationId": "decision_output_api_v1_runs__run__frames__frame__decision_get",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/DecisionRecord"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/runs/{run}/frames/{frame}/risk": {
+   "post": {
+    "summary": "Evaluate your trajectories against this frame's stored forecast",
+    "operationId": "evaluate_risk_api_v1_runs__run__frames__frame__risk_post",
+    "parameters": [
+     {
+      "name": "run",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Run"
+      }
+     },
+     {
+      "name": "frame",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Frame"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/RiskRequest"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/RiskResponse"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/jobs": {
+   "get": {
+    "summary": "All jobs, newest first",
+    "operationId": "list_jobs_api_v1_jobs_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "items": {
+          "$ref": "#/components/schemas/Job"
+         },
+         "type": "array",
+         "title": "Response List Jobs Api V1 Jobs Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "Conflict",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   },
+   "post": {
+    "summary": "Start pipeline, preparation, evaluation or training work",
+    "operationId": "submit_job_api_v1_jobs_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/JobRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "202": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Job"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "Conflict",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/jobs/{job_id}": {
+   "get": {
+    "summary": "One job",
+    "operationId": "get_job_api_v1_jobs__job_id__get",
+    "parameters": [
+     {
+      "name": "job_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Job Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Job"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   },
+   "delete": {
+    "summary": "Cancel a running job",
+    "operationId": "cancel_job_api_v1_jobs__job_id__delete",
+    "parameters": [
+     {
+      "name": "job_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Job Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Job"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/jobs/{job_id}/log": {
+   "get": {
+    "summary": "Job output",
+    "operationId": "job_log_api_v1_jobs__job_id__log_get",
+    "parameters": [
+     {
+      "name": "job_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Job Id"
+      }
+     },
+     {
+      "name": "lines",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "maximum": 5000,
+       "minimum": 1,
+       "default": 200,
+       "title": "Lines"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/JobLog"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/experiments": {
+   "get": {
+    "summary": "Stored evaluation result sets",
+    "operationId": "list_experiments_api_v1_experiments_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "items": {
+          "$ref": "#/components/schemas/ExperimentSummary"
+         },
+         "type": "array",
+         "title": "Response List Experiments Api V1 Experiments Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "Conflict",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/experiments/index": {
+   "get": {
+    "summary": "Append-only record of every evaluation run",
+    "operationId": "experiment_index_api_v1_experiments_index_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "items": {
+          "additionalProperties": true,
+          "type": "object"
+         },
+         "type": "array",
+         "title": "Response Experiment Index Api V1 Experiments Index Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "Conflict",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/v1/experiments/{name}/files/{file}": {
+   "get": {
+    "summary": "One stored result file",
+    "operationId": "experiment_file_api_v1_experiments__name__files__file__get",
+    "parameters": [
+     {
+      "name": "name",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "Name"
+      }
+     },
+     {
+      "name": "file",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "pattern": "^[A-Za-z0-9_][A-Za-z0-9_.-]{0,99}$",
+       "title": "File"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/logs": {
+   "get": {
+    "summary": "Recent structured backend log entries",
+    "operationId": "get_logs_api_v1_logs_get",
+    "parameters": [
+     {
+      "name": "lines",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "maximum": 2000,
+       "minimum": 1,
+       "default": 100,
+       "title": "Lines"
+      }
+     },
+     {
+      "name": "level",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string",
+         "pattern": "^(DEBUG|INFO|WARNING|ERROR|CRITICAL)$"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Level"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "additionalProperties": true
+         },
+         "title": "Response Get Logs Api V1 Logs Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Not Found"
+     },
+     "409": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Conflict"
+     },
+     "422": {
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      },
+      "description": "Unprocessable Entity"
+     }
+    }
+   }
+  },
+  "/api/v1/diagnostics": {
+   "get": {
+    "summary": "Counts that help explain the backend's state",
+    "operationId": "diagnostics_api_v1_diagnostics_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "additionalProperties": true,
+         "type": "object",
+         "title": "Response Diagnostics Api V1 Diagnostics Get"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "Not Found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "Conflict",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Unprocessable Entity",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ErrorResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/health": {
+   "get": {
+    "summary": "Health",
+    "operationId": "health_api_health_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "additionalProperties": true,
+         "type": "object",
+         "title": "Response Health Api Health Get"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/runs": {
+   "get": {
+    "summary": "List Runs",
+    "operationId": "list_runs_api_runs_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "items": {
+          "additionalProperties": true,
+          "type": "object"
+         },
+         "type": "array",
+         "title": "Response List Runs Api Runs Get"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/runs/{run_id}": {
+   "get": {
+    "summary": "Get Run",
+    "operationId": "get_run_api_runs__run_id__get",
+    "parameters": [
+     {
+      "name": "run_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Run Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "additionalProperties": true,
+         "title": "Response Get Run Api Runs  Run Id  Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/runs/{run_id}/frames/{index}": {
+   "get": {
+    "summary": "Get Frame",
+    "operationId": "get_frame_api_runs__run_id__frames__index__get",
+    "parameters": [
+     {
+      "name": "run_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Run Id"
+      }
+     },
+     {
+      "name": "index",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Index"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "additionalProperties": true,
+         "title": "Response Get Frame Api Runs  Run Id  Frames  Index  Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/runs/{run_id}/timeline": {
+   "get": {
+    "summary": "Get Timeline",
+    "description": "One row per frame, for the decision strip and speed plot.",
+    "operationId": "get_timeline_api_runs__run_id__timeline_get",
+    "parameters": [
+     {
+      "name": "run_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Run Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "additionalProperties": true
+         },
+         "title": "Response Get Timeline Api Runs  Run Id  Timeline Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/runs/{run_id}/images/{layer}/{index}": {
+   "get": {
+    "summary": "Get Image",
+    "operationId": "get_image_api_runs__run_id__images__layer___index__get",
+    "parameters": [
+     {
+      "name": "run_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Run Id"
+      }
+     },
+     {
+      "name": "layer",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Layer"
+      }
+     },
+     {
+      "name": "index",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "integer",
+       "title": "Index"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/evaluations": {
+   "get": {
+    "summary": "List Evaluations",
+    "operationId": "list_evaluations_api_evaluations_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "items": {
+          "type": "string"
+         },
+         "type": "array",
+         "title": "Response List Evaluations Api Evaluations Get"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/evaluations/{name}": {
+   "get": {
+    "summary": "Get Evaluation",
+    "operationId": "get_evaluation_api_evaluations__name__get",
+    "parameters": [
+     {
+      "name": "name",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Name"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "additionalProperties": true,
+         "title": "Response Get Evaluation Api Evaluations  Name  Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/evaluations/{name}/report": {
+   "get": {
+    "summary": "Get Report",
+    "operationId": "get_report_api_evaluations__name__report_get",
+    "parameters": [
+     {
+      "name": "name",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Name"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "text/plain": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/api/ros2": {
+   "get": {
+    "summary": "List Ros2",
+    "description": "Recorded ROS 2 closed-loop runs, without the per-frame decisions.",
+    "operationId": "list_ros2_api_ros2_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "items": {
+          "additionalProperties": true,
+          "type": "object"
+         },
+         "type": "array",
+         "title": "Response List Ros2 Api Ros2 Get"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "components": {
+  "schemas": {
+   "ArrayPayload": {
+    "properties": {
+     "shape": {
+      "items": {
+       "type": "integer"
+      },
+      "type": "array",
+      "title": "Shape"
+     },
+     "dtype": {
+      "type": "string",
+      "title": "Dtype"
+     },
+     "encoding": {
+      "type": "string",
+      "const": "zlib+base64",
+      "title": "Encoding"
+     },
+     "data": {
+      "type": "string",
+      "title": "Data"
+     }
+    },
+    "type": "object",
+    "required": [
+     "shape",
+     "dtype",
+     "encoding",
+     "data"
+    ],
+    "title": "ArrayPayload"
+   },
+   "BevOutput": {
+    "properties": {
+     "run": {
+      "type": "string",
+      "title": "Run"
+     },
+     "frame": {
+      "type": "integer",
+      "title": "Frame"
+     },
+     "timestamp": {
+      "type": "number",
+      "title": "Timestamp"
+     },
+     "grid": {
+      "$ref": "#/components/schemas/GridInfo"
+     },
+     "method": {
+      "type": "string",
+      "title": "Method"
+     },
+     "ipm_labels": {
+      "$ref": "#/components/schemas/ArrayPayload"
+     },
+     "support_count": {
+      "$ref": "#/components/schemas/ArrayPayload"
+     },
+     "note": {
+      "type": "string",
+      "title": "Note",
+      "default": "Flat-ground IPM labels with per-cell camera support. Not an occupancy claim."
+     }
+    },
+    "type": "object",
+    "required": [
+     "run",
+     "frame",
+     "timestamp",
+     "grid",
+     "method",
+     "ipm_labels",
+     "support_count"
+    ],
+    "title": "BevOutput"
+   },
+   "CalibrationCamera": {
+    "properties": {
+     "name": {
+      "type": "string",
+      "title": "Name"
+     },
+     "width": {
+      "type": "integer",
+      "title": "Width"
+     },
+     "height": {
+      "type": "integer",
+      "title": "Height"
+     },
+     "fx": {
+      "type": "number",
+      "title": "Fx"
+     },
+     "fy": {
+      "type": "number",
+      "title": "Fy"
+     },
+     "origin_ego": {
+      "items": {
+       "type": "number"
+      },
+      "type": "array",
+      "title": "Origin Ego"
+     },
+     "forward_ego": {
+      "items": {
+       "type": "number"
+      },
+      "type": "array",
+      "title": "Forward Ego"
+     },
+     "horizontal_fov_deg": {
+      "type": "number",
+      "title": "Horizontal Fov Deg"
+     }
+    },
+    "type": "object",
+    "required": [
+     "name",
+     "width",
+     "height",
+     "fx",
+     "fy",
+     "origin_ego",
+     "forward_ego",
+     "horizontal_fov_deg"
+    ],
+    "title": "CalibrationCamera"
+   },
+   "CalibrationStatus": {
+    "properties": {
+     "dataset": {
+      "type": "string",
+      "title": "Dataset"
+     },
+     "valid": {
+      "type": "boolean",
+      "title": "Valid"
+     },
+     "rig": {
+      "type": "string",
+      "title": "Rig"
+     },
+     "cameras": {
+      "items": {
+       "$ref": "#/components/schemas/CalibrationCamera"
+      },
+      "type": "array",
+      "title": "Cameras"
+     }
+    },
+    "type": "object",
+    "required": [
+     "dataset",
+     "valid",
+     "rig",
+     "cameras"
+    ],
+    "title": "CalibrationStatus"
+   },
+   "CameraView": {
+    "properties": {
+     "name": {
+      "type": "string",
+      "title": "Name"
+     },
+     "status": {
+      "type": "string",
+      "title": "Status"
+     },
+     "reliability": {
+      "type": "number",
+      "title": "Reliability"
+     },
+     "timestamp": {
+      "type": "number",
+      "title": "Timestamp"
+     },
+     "skew_ms": {
+      "type": "number",
+      "title": "Skew Ms"
+     },
+     "calibration": {
+      "$ref": "#/components/schemas/CalibrationCamera"
+     }
+    },
+    "type": "object",
+    "required": [
+     "name",
+     "status",
+     "reliability",
+     "timestamp",
+     "skew_ms",
+     "calibration"
+    ],
+    "title": "CameraView"
+   },
+   "Check": {
+    "properties": {
+     "name": {
+      "type": "string",
+      "title": "Name"
+     },
+     "ok": {
+      "type": "boolean",
+      "title": "Ok"
+     },
+     "detail": {
+      "type": "string",
+      "title": "Detail"
+     }
+    },
+    "type": "object",
+    "required": [
+     "name",
+     "ok",
+     "detail"
+    ],
+    "title": "Check"
+   },
+   "ConfigCheck": {
+    "properties": {
+     "valid": {
+      "type": "boolean",
+      "title": "Valid"
+     },
+     "effective": {
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Effective"
+     }
+    },
+    "type": "object",
+    "required": [
+     "valid",
+     "effective"
+    ],
+    "title": "ConfigCheck"
+   },
+   "DatasetSummary": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "title": "Id"
+     },
+     "kind": {
+      "type": "string",
+      "enum": [
+       "sequence",
+       "cam2bev_sample",
+       "nuscenes"
+      ],
+      "title": "Kind"
+     },
+     "source": {
+      "type": "string",
+      "title": "Source"
+     },
+     "provenance": {
+      "type": "string",
+      "title": "Provenance"
+     },
+     "frames": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Frames"
+     },
+     "cameras": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Cameras"
+     },
+     "segmenter": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Segmenter"
+     },
+     "note": {
+      "type": "string",
+      "title": "Note"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "kind",
+     "source",
+     "provenance",
+     "frames",
+     "cameras",
+     "segmenter",
+     "note"
+    ],
+    "title": "DatasetSummary"
+   },
+   "DecisionRecord": {
+    "properties": {
+     "run": {
+      "type": "string",
+      "title": "Run"
+     },
+     "frame": {
+      "type": "integer",
+      "title": "Frame"
+     },
+     "timestamp": {
+      "type": "number",
+      "title": "Timestamp"
+     },
+     "status": {
+      "type": "string",
+      "enum": [
+       "pass",
+       "modify",
+       "fallback"
+      ],
+      "title": "Status"
+     },
+     "selected": {
+      "type": "string",
+      "title": "Selected"
+     },
+     "nominal": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Nominal"
+     },
+     "reasons": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Reasons"
+     },
+     "fallback": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Fallback"
+     },
+     "constraints": {
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Constraints"
+     },
+     "candidates": {
+      "items": {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      "type": "array",
+      "title": "Candidates"
+     }
+    },
+    "type": "object",
+    "required": [
+     "run",
+     "frame",
+     "timestamp",
+     "status",
+     "selected",
+     "nominal",
+     "reasons",
+     "fallback",
+     "constraints",
+     "candidates"
+    ],
+    "title": "DecisionRecord"
+   },
+   "EgoInput": {
+    "properties": {
+     "timestamp": {
+      "type": "number",
+      "title": "Timestamp"
+     },
+     "x": {
+      "type": "number",
+      "title": "X"
+     },
+     "y": {
+      "type": "number",
+      "title": "Y"
+     },
+     "yaw": {
+      "type": "number",
+      "title": "Yaw"
+     },
+     "speed": {
+      "type": "number",
+      "minimum": 0.0,
+      "title": "Speed",
+      "default": 0.0
+     },
+     "yaw_rate": {
+      "type": "number",
+      "title": "Yaw Rate",
+      "default": 0.0
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "timestamp",
+     "x",
+     "y",
+     "yaw"
+    ],
+    "title": "EgoInput"
+   },
+   "ErrorBody": {
+    "properties": {
+     "code": {
+      "type": "string",
+      "title": "Code"
+     },
+     "message": {
+      "type": "string",
+      "title": "Message"
+     },
+     "request_id": {
+      "type": "string",
+      "title": "Request Id"
+     }
+    },
+    "type": "object",
+    "required": [
+     "code",
+     "message",
+     "request_id"
+    ],
+    "title": "ErrorBody"
+   },
+   "ErrorResponse": {
+    "properties": {
+     "error": {
+      "$ref": "#/components/schemas/ErrorBody"
+     }
+    },
+    "type": "object",
+    "required": [
+     "error"
+    ],
+    "title": "ErrorResponse"
+   },
+   "ExperimentSummary": {
+    "properties": {
+     "name": {
+      "type": "string",
+      "title": "Name"
+     },
+     "has_report": {
+      "type": "boolean",
+      "title": "Has Report"
+     },
+     "files": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Files"
+     }
+    },
+    "type": "object",
+    "required": [
+     "name",
+     "has_report",
+     "files"
+    ],
+    "title": "ExperimentSummary"
+   },
+   "FinalizeRequest": {
+    "properties": {
+     "source": {
+      "type": "string",
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Source",
+      "description": "Where these images came from. Stored as provenance."
+     },
+     "provenance": {
+      "type": "string",
+      "enum": [
+       "recorded",
+       "simulated"
+      ],
+      "title": "Provenance"
+     },
+     "frames": {
+      "items": {
+       "$ref": "#/components/schemas/EgoInput"
+      },
+      "type": "array",
+      "minItems": 1,
+      "title": "Frames",
+      "description": "One entry per uploaded frame, in order, with strictly increasing timestamps."
+     },
+     "desired_speed": {
+      "type": "number",
+      "maximum": 50.0,
+      "exclusiveMinimum": 0.0,
+      "title": "Desired Speed",
+      "default": 8.0
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "source",
+     "provenance",
+     "frames"
+    ],
+    "title": "FinalizeRequest"
+   },
+   "ForecastOutput": {
+    "properties": {
+     "run": {
+      "type": "string",
+      "title": "Run"
+     },
+     "frame": {
+      "type": "integer",
+      "title": "Frame"
+     },
+     "t_ref": {
+      "type": "number",
+      "title": "T Ref"
+     },
+     "last_input_timestamp": {
+      "type": "number",
+      "title": "Last Input Timestamp"
+     },
+     "method": {
+      "type": "string",
+      "title": "Method"
+     },
+     "uncertainty_semantics": {
+      "type": "string",
+      "title": "Uncertainty Semantics"
+     },
+     "n_samples": {
+      "type": "integer",
+      "title": "N Samples"
+     },
+     "horizons_s": {
+      "items": {
+       "type": "number"
+      },
+      "type": "array",
+      "title": "Horizons S"
+     },
+     "occupancy_prob": {
+      "$ref": "#/components/schemas/ArrayPayload"
+     },
+     "static_occupied": {
+      "$ref": "#/components/schemas/ArrayPayload"
+     },
+     "unobserved": {
+      "$ref": "#/components/schemas/ArrayPayload"
+     },
+     "causal": {
+      "type": "boolean",
+      "title": "Causal"
+     }
+    },
+    "type": "object",
+    "required": [
+     "run",
+     "frame",
+     "t_ref",
+     "last_input_timestamp",
+     "method",
+     "uncertainty_semantics",
+     "n_samples",
+     "horizons_s",
+     "occupancy_prob",
+     "static_occupied",
+     "unobserved",
+     "causal"
+    ],
+    "title": "ForecastOutput"
+   },
+   "FrameUploadResult": {
+    "properties": {
+     "upload": {
+      "type": "string",
+      "title": "Upload"
+     },
+     "frame": {
+      "type": "integer",
+      "title": "Frame"
+     },
+     "camera": {
+      "type": "string",
+      "title": "Camera"
+     },
+     "width": {
+      "type": "integer",
+      "title": "Width"
+     },
+     "height": {
+      "type": "integer",
+      "title": "Height"
+     },
+     "label_fractions": {
+      "additionalProperties": {
+       "type": "number"
+      },
+      "type": "object",
+      "title": "Label Fractions"
+     }
+    },
+    "type": "object",
+    "required": [
+     "upload",
+     "frame",
+     "camera",
+     "width",
+     "height",
+     "label_fractions"
+    ],
+    "title": "FrameUploadResult"
+   },
+   "GridInfo": {
+    "properties": {
+     "x_min": {
+      "type": "number",
+      "title": "X Min"
+     },
+     "x_max": {
+      "type": "number",
+      "title": "X Max"
+     },
+     "y_min": {
+      "type": "number",
+      "title": "Y Min"
+     },
+     "y_max": {
+      "type": "number",
+      "title": "Y Max"
+     },
+     "resolution": {
+      "type": "number",
+      "title": "Resolution"
+     },
+     "nx": {
+      "type": "integer",
+      "title": "Nx"
+     },
+     "ny": {
+      "type": "integer",
+      "title": "Ny"
+     }
+    },
+    "type": "object",
+    "required": [
+     "x_min",
+     "x_max",
+     "y_min",
+     "y_max",
+     "resolution",
+     "nx",
+     "ny"
+    ],
+    "title": "GridInfo"
+   },
+   "HTTPValidationError": {
+    "properties": {
+     "detail": {
+      "items": {
+       "$ref": "#/components/schemas/ValidationError"
+      },
+      "type": "array",
+      "title": "Detail"
+     }
+    },
+    "type": "object",
+    "title": "HTTPValidationError"
+   },
+   "Health": {
+    "properties": {
+     "status": {
+      "type": "string",
+      "const": "ok",
+      "title": "Status"
+     },
+     "version": {
+      "type": "string",
+      "title": "Version"
+     }
+    },
+    "type": "object",
+    "required": [
+     "status",
+     "version"
+    ],
+    "title": "Health"
+   },
+   "Job": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "title": "Id"
+     },
+     "kind": {
+      "type": "string",
+      "title": "Kind"
+     },
+     "params": {
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Params"
+     },
+     "status": {
+      "type": "string",
+      "enum": [
+       "queued",
+       "running",
+       "succeeded",
+       "failed",
+       "cancelled",
+       "lost"
+      ],
+      "title": "Status"
+     },
+     "command": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Command"
+     },
+     "created_unix": {
+      "type": "number",
+      "title": "Created Unix"
+     },
+     "started_unix": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Started Unix"
+     },
+     "finished_unix": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Finished Unix"
+     },
+     "returncode": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Returncode"
+     },
+     "error": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Error"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "kind",
+     "params",
+     "status",
+     "command",
+     "created_unix",
+     "started_unix",
+     "finished_unix",
+     "returncode",
+     "error"
+    ],
+    "title": "Job"
+   },
+   "JobLog": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "title": "Id"
+     },
+     "lines": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Lines"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "lines"
+    ],
+    "title": "JobLog"
+   },
+   "JobRequest": {
+    "properties": {
+     "kind": {
+      "type": "string",
+      "enum": [
+       "sample",
+       "episode",
+       "prepare_cam2bev",
+       "prepare_nuscenes",
+       "pipeline",
+       "evaluation",
+       "evaluate_nuscenes",
+       "train_forecaster",
+       "showcase"
+      ],
+      "title": "Kind"
+     },
+     "params": {
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Params",
+      "default": {}
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "kind"
+    ],
+    "title": "JobRequest"
+   },
+   "OccupancyOutput": {
+    "properties": {
+     "run": {
+      "type": "string",
+      "title": "Run"
+     },
+     "frame": {
+      "type": "integer",
+      "title": "Frame"
+     },
+     "timestamp": {
+      "type": "number",
+      "title": "Timestamp"
+     },
+     "grid": {
+      "$ref": "#/components/schemas/GridInfo"
+     },
+     "state_legend": {
+      "additionalProperties": {
+       "type": "integer"
+      },
+      "type": "object",
+      "title": "State Legend"
+     },
+     "class_legend": {
+      "additionalProperties": {
+       "type": "integer"
+      },
+      "type": "object",
+      "title": "Class Legend"
+     },
+     "state_fractions": {
+      "additionalProperties": {
+       "type": "number"
+      },
+      "type": "object",
+      "title": "State Fractions"
+     },
+     "voxel_state_counts": {
+      "additionalProperties": {
+       "type": "integer"
+      },
+      "type": "object",
+      "title": "Voxel State Counts"
+     },
+     "camera_reliability": {
+      "additionalProperties": {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      "type": "object",
+      "title": "Camera Reliability"
+     },
+     "bev_state": {
+      "$ref": "#/components/schemas/ArrayPayload"
+     },
+     "bev_class": {
+      "$ref": "#/components/schemas/ArrayPayload"
+     },
+     "bev_height_m": {
+      "$ref": "#/components/schemas/ArrayPayload"
+     },
+     "voxel_state": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/ArrayPayload"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "reliability_semantics": {
+      "type": "string",
+      "title": "Reliability Semantics",
+      "default": "Heuristic usable-label fraction. Not a probability, OOD score or epistemic uncertainty."
+     }
+    },
+    "type": "object",
+    "required": [
+     "run",
+     "frame",
+     "timestamp",
+     "grid",
+     "state_legend",
+     "class_legend",
+     "state_fractions",
+     "voxel_state_counts",
+     "camera_reliability",
+     "bev_state",
+     "bev_class",
+     "bev_height_m",
+     "voxel_state"
+    ],
+    "title": "OccupancyOutput"
+   },
+   "PerceptionOutput": {
+    "properties": {
+     "run": {
+      "type": "string",
+      "title": "Run"
+     },
+     "frame": {
+      "type": "integer",
+      "title": "Frame"
+     },
+     "timestamp": {
+      "type": "number",
+      "title": "Timestamp"
+     },
+     "detections": {
+      "items": {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      "type": "array",
+      "title": "Detections"
+     },
+     "tracks": {
+      "items": {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      "type": "array",
+      "title": "Tracks"
+     },
+     "provenance": {
+      "items": {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      "type": "array",
+      "title": "Provenance"
+     }
+    },
+    "type": "object",
+    "required": [
+     "run",
+     "frame",
+     "timestamp",
+     "detections",
+     "tracks",
+     "provenance"
+    ],
+    "title": "PerceptionOutput"
+   },
+   "PlanRequest": {
+    "properties": {
+     "target_speed": {
+      "type": "number",
+      "maximum": 25.0,
+      "minimum": 0.0,
+      "title": "Target Speed",
+      "description": "m/s"
+     },
+     "lateral_offset": {
+      "type": "number",
+      "maximum": 6.0,
+      "minimum": -6.0,
+      "title": "Lateral Offset",
+      "description": "Metres, left positive.",
+      "default": 0.0
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "target_speed"
+    ],
+    "title": "PlanRequest"
+   },
+   "RiskRequest": {
+    "properties": {
+     "candidates": {
+      "items": {
+       "$ref": "#/components/schemas/TrajectoryInput"
+      },
+      "type": "array",
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Candidates",
+      "description": "The first candidate is treated as the nominal plan."
+     },
+     "desired_speed": {
+      "type": "number",
+      "maximum": 50.0,
+      "exclusiveMinimum": 0.0,
+      "title": "Desired Speed",
+      "default": 10.0
+     },
+     "thresholds": {
+      "$ref": "#/components/schemas/Thresholds",
+      "default": {}
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "candidates"
+    ],
+    "title": "RiskRequest"
+   },
+   "RiskResponse": {
+    "properties": {
+     "run": {
+      "type": "string",
+      "title": "Run"
+     },
+     "frame": {
+      "type": "integer",
+      "title": "Frame"
+     },
+     "risks": {
+      "items": {
+       "$ref": "#/components/schemas/RiskRow"
+      },
+      "type": "array",
+      "title": "Risks"
+     },
+     "decision": {
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Decision"
+     },
+     "path": {
+      "anyOf": [
+       {
+        "items": {
+         "items": {
+          "type": "number"
+         },
+         "type": "array"
+        },
+        "type": "array"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Path"
+     }
+    },
+    "type": "object",
+    "required": [
+     "run",
+     "frame",
+     "risks",
+     "decision"
+    ],
+    "title": "RiskResponse"
+   },
+   "RiskRow": {
+    "properties": {
+     "candidate_id": {
+      "type": "string",
+      "title": "Candidate Id"
+     },
+     "event_definition": {
+      "type": "string",
+      "title": "Event Definition"
+     },
+     "event_score": {
+      "type": "number",
+      "title": "Event Score"
+     },
+     "score_semantics": {
+      "type": "string",
+      "title": "Score Semantics"
+     },
+     "calibrated_probability": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Calibrated Probability"
+     },
+     "calibration_status": {
+      "type": "string",
+      "title": "Calibration Status"
+     },
+     "static_collision": {
+      "type": "boolean",
+      "title": "Static Collision"
+     },
+     "first_contact_time_s": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "First Contact Time S"
+     },
+     "per_horizon_score": {
+      "items": {
+       "type": "number"
+      },
+      "type": "array",
+      "title": "Per Horizon Score"
+     },
+     "unknown_exposure": {
+      "type": "number",
+      "title": "Unknown Exposure"
+     },
+     "distance_to_unknown_m": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Distance To Unknown M"
+     },
+     "stopping_distance_m": {
+      "type": "number",
+      "title": "Stopping Distance M"
+     },
+     "unknown_corridor_violation": {
+      "type": "boolean",
+      "title": "Unknown Corridor Violation"
+     },
+     "min_clearance_m": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Min Clearance M"
+     },
+     "time_to_conflict_s": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Time To Conflict S"
+     },
+     "closest_track_id": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Closest Track Id"
+     },
+     "admissible": {
+      "type": "boolean",
+      "title": "Admissible"
+     },
+     "problems": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Problems"
+     }
+    },
+    "type": "object",
+    "required": [
+     "candidate_id",
+     "event_definition",
+     "event_score",
+     "score_semantics",
+     "calibrated_probability",
+     "calibration_status",
+     "static_collision",
+     "first_contact_time_s",
+     "per_horizon_score",
+     "unknown_exposure",
+     "distance_to_unknown_m",
+     "stopping_distance_m",
+     "unknown_corridor_violation",
+     "min_clearance_m",
+     "time_to_conflict_s",
+     "closest_track_id",
+     "admissible",
+     "problems"
+    ],
+    "title": "RiskRow"
+   },
+   "RunDetail": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "title": "Id"
+     },
+     "kind": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Kind"
+     },
+     "title": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Title"
+     },
+     "scenario": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Scenario"
+     },
+     "seed": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Seed"
+     },
+     "mode": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Mode"
+     },
+     "frames": {
+      "type": "integer",
+      "title": "Frames"
+     },
+     "input": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Input"
+     },
+     "caveat": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Caveat"
+     },
+     "has_arrays": {
+      "type": "boolean",
+      "title": "Has Arrays"
+     },
+     "grid": {
+      "$ref": "#/components/schemas/GridInfo"
+     },
+     "provenance": {
+      "items": {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      "type": "array",
+      "title": "Provenance"
+     },
+     "environment": {
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Environment"
+     },
+     "summary": {
+      "anyOf": [
+       {
+        "additionalProperties": true,
+        "type": "object"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Summary"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "kind",
+     "title",
+     "scenario",
+     "seed",
+     "mode",
+     "frames",
+     "input",
+     "caveat",
+     "has_arrays",
+     "grid",
+     "provenance",
+     "environment",
+     "summary"
+    ],
+    "title": "RunDetail"
+   },
+   "RunSummary": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "title": "Id"
+     },
+     "kind": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Kind"
+     },
+     "title": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Title"
+     },
+     "scenario": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Scenario"
+     },
+     "seed": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Seed"
+     },
+     "mode": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Mode"
+     },
+     "frames": {
+      "type": "integer",
+      "title": "Frames"
+     },
+     "input": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Input"
+     },
+     "caveat": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Caveat"
+     },
+     "has_arrays": {
+      "type": "boolean",
+      "title": "Has Arrays"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "kind",
+     "title",
+     "scenario",
+     "seed",
+     "mode",
+     "frames",
+     "input",
+     "caveat",
+     "has_arrays"
+    ],
+    "title": "RunSummary"
+   },
+   "SceneSummary": {
+    "properties": {
+     "name": {
+      "type": "string",
+      "title": "Name"
+     },
+     "description": {
+      "type": "string",
+      "title": "Description"
+     },
+     "samples": {
+      "type": "integer",
+      "title": "Samples"
+     }
+    },
+    "type": "object",
+    "required": [
+     "name",
+     "description",
+     "samples"
+    ],
+    "title": "SceneSummary"
+   },
+   "SequenceRun": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "title": "Id"
+     },
+     "mode": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Mode"
+     },
+     "fault": {
+      "anyOf": [
+       {
+        "additionalProperties": true,
+        "type": "object"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Fault"
+     },
+     "frames": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Frames"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "mode",
+     "fault",
+     "frames"
+    ],
+    "title": "SequenceRun"
+   },
+   "SequenceSummary": {
+    "properties": {
+     "name": {
+      "type": "string",
+      "title": "Name"
+     },
+     "description": {
+      "type": "string",
+      "title": "Description"
+     },
+     "samples": {
+      "type": "integer",
+      "title": "Samples"
+     },
+     "split": {
+      "type": "string",
+      "enum": [
+       "mini_val",
+       "mini_train"
+      ],
+      "title": "Split"
+     },
+     "detector_saw_scene_in_training": {
+      "type": "boolean",
+      "title": "Detector Saw Scene In Training"
+     },
+     "status_note": {
+      "type": "string",
+      "title": "Status Note"
+     },
+     "night": {
+      "type": "boolean",
+      "title": "Night"
+     },
+     "runs": {
+      "items": {
+       "$ref": "#/components/schemas/SequenceRun"
+      },
+      "type": "array",
+      "title": "Runs"
+     }
+    },
+    "type": "object",
+    "required": [
+     "name",
+     "description",
+     "samples",
+     "split",
+     "detector_saw_scene_in_training",
+     "status_note",
+     "night",
+     "runs"
+    ],
+    "title": "SequenceSummary"
+   },
+   "SystemStatus": {
+    "properties": {
+     "ready": {
+      "type": "boolean",
+      "title": "Ready"
+     },
+     "version": {
+      "type": "string",
+      "title": "Version"
+     },
+     "checks": {
+      "items": {
+       "$ref": "#/components/schemas/Check"
+      },
+      "type": "array",
+      "title": "Checks"
+     },
+     "active_job": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Active Job"
+     },
+     "external_processes": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "External Processes"
+     },
+     "environment": {
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Environment"
+     }
+    },
+    "type": "object",
+    "required": [
+     "ready",
+     "version",
+     "checks",
+     "active_job",
+     "external_processes",
+     "environment"
+    ],
+    "title": "SystemStatus"
+   },
+   "Thresholds": {
+    "properties": {
+     "max_event_score": {
+      "anyOf": [
+       {
+        "type": "number",
+        "maximum": 1.0,
+        "minimum": 0.0
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Max Event Score"
+     },
+     "max_perception_age_s": {
+      "anyOf": [
+       {
+        "type": "number",
+        "exclusiveMinimum": 0.0
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Max Perception Age S"
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "title": "Thresholds"
+   },
+   "TimelineRow": {
+    "properties": {
+     "frame": {
+      "type": "integer",
+      "title": "Frame"
+     },
+     "t": {
+      "type": "number",
+      "title": "T"
+     },
+     "speed": {
+      "type": "number",
+      "title": "Speed"
+     },
+     "status": {
+      "type": "string",
+      "enum": [
+       "pass",
+       "modify",
+       "fallback"
+      ],
+      "title": "Status"
+     },
+     "selected": {
+      "type": "string",
+      "title": "Selected"
+     },
+     "reasons": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Reasons"
+     },
+     "tracks": {
+      "type": "integer",
+      "title": "Tracks"
+     },
+     "detections": {
+      "type": "integer",
+      "title": "Detections"
+     },
+     "healthy_cameras": {
+      "type": "integer",
+      "title": "Healthy Cameras"
+     }
+    },
+    "type": "object",
+    "required": [
+     "frame",
+     "t",
+     "speed",
+     "status",
+     "selected",
+     "reasons",
+     "tracks",
+     "detections",
+     "healthy_cameras"
+    ],
+    "title": "TimelineRow"
+   },
+   "TrackHistory": {
+    "properties": {
+     "id": {
+      "type": "integer",
+      "title": "Id"
+     },
+     "cls": {
+      "type": "string",
+      "title": "Cls"
+     },
+     "first_frame": {
+      "type": "integer",
+      "title": "First Frame"
+     },
+     "last_frame": {
+      "type": "integer",
+      "title": "Last Frame"
+     },
+     "points": {
+      "items": {
+       "$ref": "#/components/schemas/TrackPoint"
+      },
+      "type": "array",
+      "title": "Points"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "cls",
+     "first_frame",
+     "last_frame",
+     "points"
+    ],
+    "title": "TrackHistory"
+   },
+   "TrackPoint": {
+    "properties": {
+     "frame": {
+      "type": "integer",
+      "title": "Frame"
+     },
+     "x": {
+      "type": "number",
+      "title": "X"
+     },
+     "y": {
+      "type": "number",
+      "title": "Y"
+     },
+     "speed": {
+      "type": "number",
+      "title": "Speed"
+     }
+    },
+    "type": "object",
+    "required": [
+     "frame",
+     "x",
+     "y",
+     "speed"
+    ],
+    "title": "TrackPoint"
+   },
+   "TrajectoryInput": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_+.-]{1,64}$",
+      "title": "Id"
+     },
+     "times": {
+      "items": {
+       "type": "number"
+      },
+      "type": "array",
+      "minItems": 2,
+      "title": "Times",
+      "description": "Seconds from the frame time, starting at 0, strictly increasing."
+     },
+     "poses": {
+      "items": {
+       "items": {
+        "type": "number"
+       },
+       "type": "array"
+      },
+      "type": "array",
+      "title": "Poses",
+      "description": "[x, y, yaw, speed] in the ego frame: metres, radians, m/s."
+     }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "required": [
+     "id",
+     "times",
+     "poses"
+    ],
+    "title": "TrajectoryInput"
+   },
+   "ValidationError": {
+    "properties": {
+     "loc": {
+      "items": {
+       "anyOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "integer"
+        }
+       ]
+      },
+      "type": "array",
+      "title": "Location"
+     },
+     "msg": {
+      "type": "string",
+      "title": "Message"
+     },
+     "type": {
+      "type": "string",
+      "title": "Error Type"
+     },
+     "input": {
+      "title": "Input"
+     },
+     "ctx": {
+      "type": "object",
+      "title": "Context"
+     }
+    },
+    "type": "object",
+    "required": [
+     "loc",
+     "msg",
+     "type"
+    ],
+    "title": "ValidationError"
+   }
+  }
+ }
+}

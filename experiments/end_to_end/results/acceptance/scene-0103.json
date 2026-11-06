@@ -1,0 +1,106 @@
+{
+ "sequence": "scene-0103",
+ "pipeline_config": "configs/pipeline_streampetr.yaml",
+ "environment": {
+  "python": "3.12.15",
+  "numpy": "2.5.4",
+  "opencv": "5.0.0",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "machine": "arm64",
+  "foresightbev": "0.3.0",
+  "git_commit": "aaef1cb63179d53dc90021d0e1bce6a4e89b8815",
+  "git_dirty": true,
+  "source_sha256": "0d4c31ba89ccee28366cde2e0564f096d611326278c2c1058db017053a161ef9",
+  "created_unix": 1793904835.961301
+ },
+ "steps": [
+  {
+   "step": "inputs_and_calibration",
+   "ok": true,
+   "checks": {
+    "frames": 40,
+    "cameras": 6,
+    "source": "nuscenes/v1.0-mini",
+    "provenance": "recorded",
+    "segmenter": "segformer_b2_cityscapes"
+   },
+   "seconds": 0.0
+  },
+  {
+   "step": "pipeline_all_stages",
+   "ok": true,
+   "checks": {
+    "occupied": 52447,
+    "free": 883701,
+    "unknown": 1304932,
+    "detections": 1627,
+    "tracks": 1864,
+    "confirmed": 1587,
+    "forecast_frames": 40,
+    "decisions": 40,
+    "statuses": [
+     "fallback",
+     "modify",
+     "pass"
+    ],
+    "all_three_states_present": true,
+    "one_decision_per_frame": true,
+    "forecast_causal_every_frame": true
+   },
+   "seconds": 19.37
+  },
+  {
+   "step": "pipeline_repeatable",
+   "ok": true,
+   "checks": {
+    "second_run_has_identical_decisions": true
+   },
+   "seconds": 13.61
+  },
+  {
+   "step": "ros2_two_process",
+   "ok": true,
+   "checks": {
+    "transport": "ros2",
+    "ros_distro": "jazzy",
+    "rmw": "rmw_fastrtps_cpp",
+    "decisions": 40,
+    "topics": {
+     "tracks": 40,
+     "detections": 40,
+     "forecast": 40,
+     "risk": 40
+    },
+    "identical_to_in_process": true,
+    "occupancy_hashes_compared": true,
+    "every_stage_topic_delivered": true
+   },
+   "seconds": 239.45
+  },
+  {
+   "step": "backend_cold_start_and_content",
+   "ok": true,
+   "checks": {
+    "ready": true,
+    "served_occupancy_equals_computed": true,
+    "forecast_causal": true,
+    "decision_matches": true,
+    "risk_endpoint_returned_decision": true,
+    "ros_output_served_by_backend_equals_computed": true,
+    "missing_output_is_404": true,
+    "clean_shutdown": true
+   },
+   "seconds": 1.16
+  },
+  {
+   "step": "stored_results",
+   "ok": true,
+   "checks": {
+    "written": "experiments/end_to_end/results/acceptance/scene-0103.json"
+   },
+   "seconds": 0.0
+  }
+ ],
+ "passed": true,
+ "completed_unix": 1793905109.797285
+}

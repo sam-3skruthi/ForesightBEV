@@ -1,0 +1,31 @@
+{
+ "transport": "ros2",
+ "kind": "replay",
+ "sequence": "cam2bev_1frlr_example",
+ "source": "cam2bev_example",
+ "provenance": "simulated",
+ "frames": 1,
+ "ros_distro": "jazzy",
+ "rmw": "rmw_fastrtps_cpp",
+ "wall_s": 7.634467582975049,
+ "topic_message_counts": {},
+ "stall_frame": 0,
+ "decisions": [
+  {
+   "frame": 0,
+   "t": 0.0,
+   "status": "fallback",
+   "selected": "comfort_stop",
+   "reasons": [
+    "PERCEPTION_MISSING",
+    "FALLBACK_COMFORT_STOP"
+   ],
+   "fallback": "comfort_stop",
+   "occupancy_sha256": null
+  }
+ ],
+ "scenario": "cam2bev_1frlr_example",
+ "seed": 0,
+ "collided_with": null,
+ "ego_x": 0.0
+}

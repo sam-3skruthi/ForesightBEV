@@ -1,0 +1,222 @@
+{
+ "dataset": "nuScenes v1.0-mini",
+ "scenes": [
+  "scene-0061"
+ ],
+ "split": "no split: verification of a pretrained and classical pipeline on annotated logs",
+ "segmenter": "segformer_b2_cityscapes",
+ "match_threshold_m": 2.0,
+ "max_range_m": 40.0,
+ "min_visibility_level": 2,
+ "limitations": "Ten scenes. Visibility levels come from annotations. No occupancy labels are available; static occupancy is unscored. Replay is open loop.",
+ "pooled": {
+  "frames": 39,
+  "detection": {
+   "VEHICLE": {
+    "annotated": 311,
+    "recall_2m": 0.11254019292604502,
+    "detections": 358,
+    "precision_2m": 0.09776536312849161
+   },
+   "PERSON": {
+    "annotated": 636,
+    "recall_2m": 0.17295597484276728,
+    "detections": 666,
+    "precision_2m": 0.16516516516516516
+   }
+  },
+  "detection_position_error_m": {
+   "0-15m": {
+    "mean": 1.185572131442132,
+    "matches": 68
+   },
+   "15-30m": {
+    "mean": 1.0826529353003556,
+    "matches": 62
+   },
+   "30-40m": {
+    "mean": 1.0806618305852227,
+    "matches": 15
+   }
+  },
+  "tracking": {
+   "annotated": 947,
+   "matched": 106,
+   "recall_2m": 0.1119324181626188,
+   "false_track_frames": 475,
+   "id_switches": 45,
+   "mean_position_error_m": 1.1579524843875126,
+   "mean_velocity_error_mps": 3.154410812827085,
+   "mean_nees_4dof": 38.39999750494167
+  },
+  "occupancy_against_dynamic_boxes": {
+   "box_cells": 63776,
+   "box_cells_marked_free": 0.5803907425990968,
+   "boxes": 947,
+   "boxes_with_dynamic_occupied_contact": 0.395987328405491,
+   "dynamic_occupied_cells": 18143,
+   "dynamic_occupied_inside_inflated_box": 0.49666538058755444
+  },
+  "forecast": {
+   "horizons_s": [
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+   ],
+   "constant_velocity_error_m": [
+    2.3074289652659505,
+    4.033158419831867,
+    5.903851155607063,
+    7.87252594532465,
+    9.476368689275285,
+    11.294881327376892
+   ],
+   "frozen_error_m": [
+    1.2422399389333132,
+    1.479683747746993,
+    1.7728053943634514,
+    2.079499634669056,
+    2.406545876198046,
+    2.712642141284936
+   ],
+   "pairs": [
+    168,
+    162,
+    159,
+    154,
+    149,
+    146
+   ]
+  },
+  "safety": {
+   "decisions": {
+    "pass": 11,
+    "fallback": 26,
+    "modify": 2
+   },
+   "reasons": {
+    "NOMINAL_ADMISSIBLE": 11,
+    "NOMINAL_UNKNOWN_CORRIDOR": 26,
+    "NO_ADMISSIBLE_CANDIDATE": 26,
+    "FALLBACK_COMFORT_STOP": 4,
+    "NOMINAL_EVENT_SCORE_EXCEEDED": 24,
+    "FALLBACK_EMERGENCY_STOP": 22
+   },
+   "logged_path_frames": 33,
+   "logged_path_true_contact": 0,
+   "logged_path_event_score_alarm": 23,
+   "logged_path_alarm_rate": 0.696969696969697,
+   "logged_path_unknown_violation_rate": 0.7878787878787878
+  },
+  "mean_pipeline_ms": 1465.5601975652808
+ },
+ "per_scene": {
+  "scene-0061": {
+   "frames": 39,
+   "detection": {
+    "VEHICLE": {
+     "annotated": 311,
+     "recall_2m": 0.11254019292604502,
+     "detections": 358,
+     "precision_2m": 0.09776536312849161
+    },
+    "PERSON": {
+     "annotated": 636,
+     "recall_2m": 0.17295597484276728,
+     "detections": 666,
+     "precision_2m": 0.16516516516516516
+    }
+   },
+   "detection_position_error_m": {
+    "0-15m": {
+     "mean": 1.185572131442132,
+     "matches": 68
+    },
+    "15-30m": {
+     "mean": 1.0826529353003556,
+     "matches": 62
+    },
+    "30-40m": {
+     "mean": 1.0806618305852227,
+     "matches": 15
+    }
+   },
+   "tracking": {
+    "annotated": 947,
+    "matched": 106,
+    "recall_2m": 0.1119324181626188,
+    "false_track_frames": 475,
+    "id_switches": 45,
+    "mean_position_error_m": 1.1579524843875126,
+    "mean_velocity_error_mps": 3.154410812827085,
+    "mean_nees_4dof": 38.39999750494167
+   },
+   "occupancy_against_dynamic_boxes": {
+    "box_cells": 63776,
+    "box_cells_marked_free": 0.5803907425990968,
+    "boxes": 947,
+    "boxes_with_dynamic_occupied_contact": 0.395987328405491,
+    "dynamic_occupied_cells": 18143,
+    "dynamic_occupied_inside_inflated_box": 0.49666538058755444
+   },
+   "forecast": {
+    "horizons_s": [
+     0.5,
+     1.0,
+     1.5,
+     2.0,
+     2.5,
+     3.0
+    ],
+    "constant_velocity_error_m": [
+     2.3074289652659505,
+     4.033158419831867,
+     5.903851155607063,
+     7.87252594532465,
+     9.476368689275285,
+     11.294881327376892
+    ],
+    "frozen_error_m": [
+     1.2422399389333132,
+     1.479683747746993,
+     1.7728053943634514,
+     2.079499634669056,
+     2.406545876198046,
+     2.712642141284936
+    ],
+    "pairs": [
+     168,
+     162,
+     159,
+     154,
+     149,
+     146
+    ]
+   },
+   "safety": {
+    "decisions": {
+     "pass": 11,
+     "fallback": 26,
+     "modify": 2
+    },
+    "reasons": {
+     "NOMINAL_ADMISSIBLE": 11,
+     "NOMINAL_UNKNOWN_CORRIDOR": 26,
+     "NO_ADMISSIBLE_CANDIDATE": 26,
+     "FALLBACK_COMFORT_STOP": 4,
+     "NOMINAL_EVENT_SCORE_EXCEEDED": 24,
+     "FALLBACK_EMERGENCY_STOP": 22
+    },
+    "logged_path_frames": 33,
+    "logged_path_true_contact": 0,
+    "logged_path_event_score_alarm": 23,
+    "logged_path_alarm_rate": 0.696969696969697,
+    "logged_path_unknown_violation_rate": 0.7878787878787878
+   },
+   "mean_pipeline_ms": 1465.5601975652808
+  }
+ }
+}

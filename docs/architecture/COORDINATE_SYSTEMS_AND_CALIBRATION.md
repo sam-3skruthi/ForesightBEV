@@ -1,6 +1,6 @@
 # Coordinate Systems, Calibration, and Metric Geometry
 
-**Project:** ForesightBEV Stage 1 Architecture
+**Project:** Tavyra Stage 1 Architecture
 **Document:** `docs/architecture/COORDINATE_SYSTEMS_AND_CALIBRATION.md`
 **Status:** Approved Technical Specification
 **Date:** November 2026
@@ -9,7 +9,7 @@
 
 ## 1. Mathematical Coordinate Frame Definitions
 
-ForesightBEV strictly adheres to standard robotics and computer vision spatial conventions. To prevent silent coordinate contamination, all transformations must explicitly designate source and destination frames.
+Tavyra strictly adheres to standard robotics and computer vision spatial conventions. To prevent silent coordinate contamination, all transformations must explicitly designate source and destination frames.
 
 ```
        [ROBOT BASE FRAME: REP-103]                [CAMERA OPTICAL FRAME: OpenCV]

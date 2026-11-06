@@ -1,0 +1,22 @@
+# Real footage. Tuned on the dev scenes in configs/nuscenes_splits.yaml only.
+# Keyframes are 0.5 s apart and cameras expose up to about 36 ms apart.
+detector: image_size
+occupancy:
+  max_camera_skew_s: 0.1
+  ego_half_length: 2.8
+  ego_half_width: 1.1
+  ground_height_tolerance_m: 0.4
+image_detection:
+  radial_std_fraction: 0.08    # Measured on dev scenes: about 1 m mean error at typical 10-20 m range.
+detection:
+  max_range_m: 45.0
+safety:
+  max_event_score: 0.10
+  max_perception_age_s: 0.75
+tracker:
+  max_misses: 2                # 1 s at the 2 Hz keyframe rate.
+risk:
+  blind_zone_x: 7.0
+  blind_zone_y: 5.5
+forecast:
+  stationary_sigmas: 3.0       # At 2 Hz with size-based range, velocity is noisy; do not extrapolate on weak evidence.

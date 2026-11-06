@@ -1,0 +1,104 @@
+{
+ "sequence": "cam2bev_sample",
+ "pipeline_config": "configs/pipeline_default.yaml",
+ "environment": {
+  "python": "3.12.15",
+  "numpy": "2.5.4",
+  "opencv": "5.0.0",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "machine": "arm64",
+  "foresightbev": "0.3.0",
+  "git_commit": "aaef1cb63179d53dc90021d0e1bce6a4e89b8815",
+  "git_dirty": true,
+  "source_sha256": "0d4c31ba89ccee28366cde2e0564f096d611326278c2c1058db017053a161ef9",
+  "created_unix": 1793904274.7016551
+ },
+ "steps": [
+  {
+   "step": "inputs_and_calibration",
+   "ok": true,
+   "checks": {
+    "frames": 1,
+    "cameras": 4,
+    "source": "cam2bev_example",
+    "provenance": "simulated",
+    "segmenter": null
+   },
+   "seconds": 0.0
+  },
+  {
+   "step": "pipeline_all_stages",
+   "ok": true,
+   "checks": {
+    "occupied": 1122,
+    "free": 29236,
+    "unknown": 25780,
+    "detections": 6,
+    "tracks": 6,
+    "confirmed": 0,
+    "forecast_frames": 1,
+    "decisions": 1,
+    "statuses": [
+     "modify"
+    ],
+    "all_three_states_present": true,
+    "one_decision_per_frame": true,
+    "forecast_causal_every_frame": true
+   },
+   "seconds": 0.34
+  },
+  {
+   "step": "pipeline_repeatable",
+   "ok": true,
+   "checks": {
+    "second_run_has_identical_decisions": true
+   },
+   "seconds": 0.13
+  },
+  {
+   "step": "ros2_two_process",
+   "ok": true,
+   "checks": {
+    "transport": "ros2",
+    "ros_distro": "jazzy",
+    "rmw": "rmw_fastrtps_cpp",
+    "decisions": 1,
+    "topics": {
+     "tracks": 1,
+     "detections": 1,
+     "forecast": 1,
+     "risk": 1
+    },
+    "identical_to_in_process": true,
+    "occupancy_hashes_compared": true,
+    "every_stage_topic_delivered": true
+   },
+   "seconds": 18.01
+  },
+  {
+   "step": "backend_cold_start_and_content",
+   "ok": true,
+   "checks": {
+    "ready": true,
+    "served_occupancy_equals_computed": true,
+    "forecast_causal": true,
+    "decision_matches": true,
+    "risk_endpoint_returned_decision": true,
+    "ros_output_served_by_backend_equals_computed": true,
+    "missing_output_is_404": true,
+    "clean_shutdown": true
+   },
+   "seconds": 1.13
+  },
+  {
+   "step": "stored_results",
+   "ok": true,
+   "checks": {
+    "written": "experiments/end_to_end/results/acceptance/cam2bev_sample.json"
+   },
+   "seconds": 0.0
+  }
+ ],
+ "passed": true,
+ "completed_unix": 1793904294.434643
+}

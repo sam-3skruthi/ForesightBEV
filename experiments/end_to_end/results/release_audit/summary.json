@@ -1,0 +1,56 @@
+{
+ "runs": 11,
+ "totals": {
+  "frames": 444,
+  "detections": 12271,
+  "tracks": 14167,
+  "pass": 258,
+  "fallback": 89,
+  "modify": 97
+ },
+ "max_camera_skew_ms": 35.64620018005371,
+ "fault_frames_passed": [
+  [
+   14,
+   "pass",
+   [
+    "CAMERA_COVERAGE_LOST",
+    "NOMINAL_ADMISSIBLE"
+   ],
+   3.6650244186522896,
+   3.6650244186522896
+  ],
+  [
+   22,
+   "pass",
+   [
+    "CAMERA_COVERAGE_LOST",
+    "NOMINAL_ADMISSIBLE"
+   ],
+   3.0785190789077466,
+   3.0785190789077466
+  ],
+  [
+   23,
+   "pass",
+   [
+    "CAMERA_COVERAGE_LOST",
+    "NOMINAL_ADMISSIBLE"
+   ],
+   3.481067390348325,
+   3.481067390348325
+  ],
+  [
+   24,
+   "pass",
+   [
+    "CAMERA_COVERAGE_LOST",
+    "NOMINAL_ADMISSIBLE"
+   ],
+   3.933053916659048,
+   3.933053916659048
+  ]
+ ],
+ "failures": 0,
+ "first_failures": []
+}

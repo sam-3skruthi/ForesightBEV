@@ -1,0 +1,53 @@
+{
+ "status": "mini_val, previously seen, preliminary",
+ "scenes": [
+  "scene-0103",
+  "scene-0916"
+ ],
+ "frames": 81,
+ "note": "Open-loop replay. A conflict means the nominal plan overlapped annotated objects at later keyframes as logged; other road users did not react. Thresholds are frozen and were not tuned here.",
+ "unknown_conservative": {
+  "counts": {
+   "frames": 81,
+   "nominal_conflicts_in_annotations": 3,
+   "interventions": 8,
+   "interventions_with_conflict": 2,
+   "interventions_without_conflict": 6,
+   "conflicts_passed_without_intervention": 1,
+   "logged_alarm": 1,
+   "logged_unknown_violation": 1,
+   "logged_frames": 68,
+   "logged_true_contact": 0
+  },
+  "reasons": {
+   "NOMINAL_ADMISSIBLE": 73,
+   "NOMINAL_EVENT_SCORE_EXCEEDED": 6,
+   "NO_ADMISSIBLE_CANDIDATE": 3,
+   "FALLBACK_EMERGENCY_STOP": 3,
+   "NOMINAL_UNKNOWN_CORRIDOR": 3,
+   "NOMINAL_STATIC_COLLISION": 1
+  }
+ },
+ "unknown_as_free": {
+  "counts": {
+   "frames": 81,
+   "nominal_conflicts_in_annotations": 3,
+   "interventions": 6,
+   "interventions_with_conflict": 2,
+   "interventions_without_conflict": 4,
+   "conflicts_passed_without_intervention": 1,
+   "logged_alarm": 1,
+   "logged_unknown_violation": 0,
+   "logged_frames": 68,
+   "logged_true_contact": 0
+  },
+  "reasons": {
+   "NOMINAL_ADMISSIBLE": 75,
+   "NOMINAL_EVENT_SCORE_EXCEEDED": 6,
+   "NO_ADMISSIBLE_CANDIDATE": 3,
+   "FALLBACK_EMERGENCY_STOP": 3,
+   "NOMINAL_STATIC_COLLISION": 1
+  }
+ },
+ "frames_with_different_choice": 2
+}

@@ -1,0 +1,42 @@
+{
+ "scenes": [
+  "scene-0103",
+  "scene-0916"
+ ],
+ "split": "mini_val",
+ "note": "mini_val, previously seen, preliminary.",
+ "variants": {
+  "current": {
+   "recall": 0.7970719804798698,
+   "matched": 1960,
+   "annotated": 2459,
+   "false_track_frames": 419,
+   "id_switches": 192,
+   "id_switches_per_100": 9.795918367346939,
+   "position_error": 0.5324345346984183,
+   "velocity_error": 0.4997704187307533,
+   "nees": 3.3327237916045007,
+   "forecast_1s": 0.8414245527309627,
+   "forecast_3s": 1.8595705462956578,
+   "frozen_1s": 0.9287939993761791,
+   "frozen_3s": 1.8832872785451993,
+   "pairs_3s": 1470
+  },
+  "model_velocity": {
+   "recall": 0.7864985766571777,
+   "matched": 1934,
+   "annotated": 2459,
+   "false_track_frames": 420,
+   "id_switches": 148,
+   "id_switches_per_100": 7.652533609100311,
+   "position_error": 0.5393947595587617,
+   "velocity_error": 0.19729213455106553,
+   "nees": 3.420999754985255,
+   "forecast_1s": 0.7831069395429635,
+   "forecast_3s": 1.6590357044713613,
+   "frozen_1s": 0.9350082980533262,
+   "frozen_3s": 1.8563555685443713,
+   "pairs_3s": 1452
+  }
+ }
+}

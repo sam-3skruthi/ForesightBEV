@@ -1,0 +1,40 @@
+{
+ "transport": "ros2",
+ "kind": "replay",
+ "sequence": "cam2bev_1frlr_example",
+ "source": "cam2bev_example",
+ "provenance": "simulated",
+ "frames": 1,
+ "ros_distro": "jazzy",
+ "rmw": "rmw_fastrtps_cpp",
+ "wall_s": 11.746134207991417,
+ "topic_message_counts": {
+  "tracks": 1,
+  "detections": 1,
+  "forecast": 1,
+  "risk": 1
+ },
+ "stall_frame": null,
+ "decisions": [
+  {
+   "frame": 0,
+   "t": 0.0,
+   "status": "modify",
+   "selected": "lane+0.0_v0.2",
+   "reasons": [
+    "NOMINAL_STATIC_COLLISION",
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "522b1cafef49a4392c0f5e8cf872e801be2e6e651b470fccc581b0c63b6c0286"
+  }
+ ],
+ "scenario": "cam2bev_1frlr_example",
+ "seed": 0,
+ "collided_with": null,
+ "ego_x": 0.0,
+ "matches_in_process": true,
+ "occupancy_hashes_compared": true,
+ "in_process_frames": 1,
+ "first_mismatch_frame": null
+}

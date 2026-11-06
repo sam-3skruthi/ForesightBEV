@@ -1,0 +1,7 @@
+# Tuning is allowed only on dev scenes. Held-out scenes are scored once, after freezing
+# configs/pipeline_nuscenes.yaml. Ten scenes cannot support generalisation claims.
+dev: [scene-0061, scene-0103]
+held_out: [scene-0553, scene-0655, scene-0757, scene-0796, scene-0916, scene-1077, scene-1094, scene-1100]
+# Official devkit mini_val. Headline split for pretrained nuScenes detectors, which trained on the
+# full train split. Both scenes are previously seen here: 0103 was a tuning scene, 0916 was held out and reported.
+mini_val: [scene-0103, scene-0916]

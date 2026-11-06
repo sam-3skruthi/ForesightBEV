@@ -1,16 +1,19 @@
 [project]
 name = "foresightbev"
 version = "0.1.0"
-description = "ForesightBEV: Metric 3D Bird's-Eye-View Geometric Perception and World Modeling"
+description = "Tavyra: camera-centric 3D occupancy, spatiotemporal forecasting and risk-constrained decision intelligence for autonomous driving"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "fastapi>=0.162.0",
+    "httpx>=0.28.1",
     "numpy>=1.24.0",
     "opencv-python>=5.0.0.93",
     "pillow>=12.3.0",
     "pyyaml>=6.0.3",
     "scipy>=1.15.3",
     "tqdm>=4.70.1",
+    "uvicorn>=0.54.0",
 ]
 
 [build-system]
@@ -25,4 +28,8 @@ pythonpath = ["src"]
 dev = [
     "pytest>=9.2.0",
     "ruff>=0.17.3",
+]
+ml = [
+    "torch>=2.14.1",
+    "transformers>=5.20.2",
 ]

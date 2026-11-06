@@ -1,8 +1,8 @@
-# ForesightBEV — Research Status
+# Tavyra — Research Status
 
 ## Current research direction
 
-ForesightBEV is focused on camera-based autonomous-driving scene
+Tavyra is focused on camera-based autonomous-driving scene
 understanding, 3D occupancy estimation, perception uncertainty, future
 occupancy prediction, and trajectory-risk assessment.
 
@@ -28,7 +28,7 @@ carried forward without review.
 ## Retained repository audits
 
 The Cam2BEV and Birds_Eye_View audits are retained as prior-art and geometric
-reproduction research. They do not establish the final ForesightBEV model
+reproduction research. They do not establish the final Tavyra model
 architecture or research contribution.
 
 The upstream repository clones are kept locally under

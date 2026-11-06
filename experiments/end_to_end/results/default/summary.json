@@ -1,0 +1,3165 @@
+{
+ "modes": {
+  "blind_filter": {
+   "overall": {
+    "collision_rate": {
+     "mean": 0.05,
+     "low": 0.0,
+     "high": 0.1,
+     "n": 60
+    },
+    "route_completion": {
+     "mean": 0.7444460454437597,
+     "low": 0.6740530414938509,
+     "high": 0.815170706540328,
+     "n": 60
+    },
+    "goal_rate": {
+     "mean": 0.43333333333333335,
+     "low": 0.31666666666666665,
+     "high": 0.5666666666666667,
+     "n": 60
+    },
+    "freeze_rate": {
+     "mean": 0.2,
+     "low": 0.1,
+     "high": 0.3,
+     "n": 60
+    },
+    "mean_speed": {
+     "mean": 6.804726349482747,
+     "low": 6.108664957552021,
+     "high": 7.5000681712160375,
+     "n": 60
+    },
+    "max_decel": {
+     "mean": 4.008333333333334,
+     "low": 3.375,
+     "high": 4.583333333333333,
+     "n": 60
+    },
+    "rms_jerk": {
+     "mean": 6.273710574349653,
+     "low": 5.509211804872646,
+     "high": 6.98932619702246,
+     "n": 60
+    },
+    "intervention_fraction": 0.4994731296101159,
+    "fallback_fraction": 0.04214963119072708,
+    "emergency_fraction": 0.03424657534246575,
+    "episodes": 60
+   },
+   "by_scenario": {
+    "cut_in": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.9041667094350343,
+      "low": 0.8328904363968282,
+      "high": 0.9649026941107361,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.3,
+      "low": 0.0,
+      "high": 0.6,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 7.292650402830754,
+      "low": 6.653008832403904,
+      "high": 7.898347996315652,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 3.55,
+      "low": 2.5,
+      "high": 4.6,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 9.288150645034174,
+      "low": 8.262240306138867,
+      "high": 10.250103360656912,
+      "n": 10
+     },
+     "intervention_fraction": 0.5735080058224163,
+     "fallback_fraction": 0.033478893740902474,
+     "emergency_fraction": 0.00727802037845706,
+     "episodes": 10
+    },
+    "dense_traffic": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5231492368889642,
+      "low": 0.4738346741071272,
+      "high": 0.5747629357060741,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 4.161998648687887,
+      "low": 3.7595588076387516,
+      "high": 4.557641662783077,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000002,
+      "low": 6.000000000000001,
+      "high": 6.000000000000002,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.763832972873582,
+      "low": 7.208233729520687,
+      "high": 8.261187420717782,
+      "n": 10
+     },
+     "intervention_fraction": 0.6085714285714285,
+     "fallback_fraction": 0.10285714285714286,
+     "emergency_fraction": 0.09,
+     "episodes": 10
+    },
+    "free_road": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.936624133215078,
+      "low": 9.909508616545162,
+      "high": 9.96178148052415,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 0.7485842737784638,
+      "low": 0.7276993432537395,
+      "high": 0.7753276200700229,
+      "n": 10
+     },
+     "intervention_fraction": 0.0017857142857142857,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "lead_brake": {
+     "collision_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5126224198308909,
+      "low": 0.3787585168138897,
+      "high": 0.6860447262572495,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.7,
+      "low": 0.4,
+      "high": 1.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 4.677212162318927,
+      "low": 3.3789523620236532,
+      "high": 6.128257122296427,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 5.65,
+      "low": 4.95,
+      "high": 6.000000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 6.49863091049829,
+      "low": 5.934918000467075,
+      "high": 7.084525972609928,
+      "n": 10
+     },
+     "intervention_fraction": 0.7098765432098766,
+     "fallback_fraction": 0.07098765432098765,
+     "emergency_fraction": 0.06944444444444445,
+     "episodes": 10
+    },
+    "occluded_pedestrian": {
+     "collision_rate": {
+      "mean": 0.2,
+      "low": 0.0,
+      "high": 0.5,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.8589625076641838,
+      "low": 0.6938751040011193,
+      "high": 0.9798344349339498,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.7,
+      "low": 0.4,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.247787773019361,
+      "low": 8.504954337443417,
+      "high": 9.688046739924697,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 3.9,
+      "low": 2.8499999999999996,
+      "high": 4.95,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 6.405786327553571,
+      "low": 5.549579060321355,
+      "high": 7.326572917283058,
+      "n": 10
+     },
+     "intervention_fraction": 0.2953667953667954,
+     "fallback_fraction": 0.009652509652509652,
+     "emergency_fraction": 0.009652509652509652,
+     "episodes": 10
+    },
+    "static_obstacle": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.6677753988434849,
+      "low": 0.4642388919326189,
+      "high": 0.867525877156813,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.5,
+      "low": 0.2,
+      "high": 0.8,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.5,
+      "low": 0.2,
+      "high": 0.8,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 5.5120849768244655,
+      "low": 3.7266260492480914,
+      "high": 7.2112887515832504,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 4.95,
+      "low": 3.9,
+      "high": 6.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 6.937278316359837,
+      "low": 5.788490128607216,
+      "high": 8.199111390364282,
+      "n": 10
+     },
+     "intervention_fraction": 0.6764275256222547,
+     "fallback_fraction": 0.020497803806734993,
+     "emergency_fraction": 0.017569546120058566,
+     "episodes": 10
+    }
+   },
+   "pipeline_ms": 324.4057873180091
+  },
+  "blind_no_filter": {
+   "overall": {
+    "collision_rate": {
+     "mean": 0.8166666666666667,
+     "low": 0.7166666666666667,
+     "high": 0.9166666666666666,
+     "n": 60
+    },
+    "route_completion": {
+     "mean": 0.5240242496892628,
+     "low": 0.46559378356837056,
+     "high": 0.5874878595436349,
+     "n": 60
+    },
+    "goal_rate": {
+     "mean": 0.18333333333333332,
+     "low": 0.08333333333333333,
+     "high": 0.2833333333333333,
+     "n": 60
+    },
+    "freeze_rate": {
+     "mean": 0.0,
+     "low": 0.0,
+     "high": 0.0,
+     "n": 60
+    },
+    "mean_speed": {
+     "mean": 9.887178020559846,
+     "low": 9.86049589421214,
+     "high": 9.913535718848308,
+     "n": 60
+    },
+    "max_decel": {
+     "mean": 0.0,
+     "low": 0.0,
+     "high": 0.0,
+     "n": 60
+    },
+    "rms_jerk": {
+     "mean": 1.1957667554707556,
+     "low": 1.116800792493561,
+     "high": 1.2754222238057078,
+     "n": 60
+    },
+    "intervention_fraction": 0.0,
+    "fallback_fraction": 0.0,
+    "emergency_fraction": 0.0,
+    "episodes": 60
+   },
+   "by_scenario": {
+    "cut_in": {
+     "collision_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.344440614755284,
+      "low": 0.27278636320586547,
+      "high": 0.42559384755655477,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.884166561430353,
+      "low": 9.828466743696916,
+      "high": 9.940488628434526,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 1.4200508649550403,
+      "low": 1.2618695252974417,
+      "high": 1.5665967312386815,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "dense_traffic": {
+     "collision_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5553106758369531,
+      "low": 0.5118389599161579,
+      "high": 0.6034915095301034,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.889682679696131,
+      "low": 9.837950805940284,
+      "high": 9.93892523133716,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 1.0909370699547463,
+      "low": 1.0164065691732793,
+      "high": 1.1654699338720742,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "free_road": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.936624133215078,
+      "low": 9.908915961986004,
+      "high": 9.96301962569214,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 0.7485842737784638,
+      "low": 0.728067069430516,
+      "high": 0.7760529104780842,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "lead_brake": {
+     "collision_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.4208614055564497,
+      "low": 0.3729493975548306,
+      "high": 0.46524633780054653,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.863394184974316,
+      "low": 9.777288391913649,
+      "high": 9.945592455168782,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 1.2226818279461045,
+      "low": 1.023300534932508,
+      "high": 1.3808145858266774,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "occluded_pedestrian": {
+     "collision_rate": {
+      "mean": 0.9,
+      "low": 0.7,
+      "high": 1.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.440397583061589,
+      "low": 0.36545554876312736,
+      "high": 0.5689854369579319,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.89089893106039,
+      "low": 9.821225127685514,
+      "high": 9.95148406904055,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 1.404469059122757,
+      "low": 1.2702770616560861,
+      "high": 1.5313786943103305,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "static_obstacle": {
+     "collision_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.3831352189253012,
+      "low": 0.34089771596591845,
+      "high": 0.423131360943346,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.858301632982807,
+      "low": 9.775395497177177,
+      "high": 9.930270967072605,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 1.2878774370674222,
+      "low": 1.1009424865842508,
+      "high": 1.487074645283742,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    }
+   },
+   "pipeline_ms": 324.88498968356305
+  },
+  "filter": {
+   "overall": {
+    "collision_rate": {
+     "mean": 0.0,
+     "low": 0.0,
+     "high": 0.0,
+     "n": 60
+    },
+    "route_completion": {
+     "mean": 0.8047807374313637,
+     "low": 0.7417404849062672,
+     "high": 0.8639179242969164,
+     "n": 60
+    },
+    "goal_rate": {
+     "mean": 0.48333333333333334,
+     "low": 0.36666666666666664,
+     "high": 0.6,
+     "n": 60
+    },
+    "freeze_rate": {
+     "mean": 0.15,
+     "low": 0.06666666666666667,
+     "high": 0.25,
+     "n": 60
+    },
+    "mean_speed": {
+     "mean": 6.994183535450909,
+     "low": 6.3458097574058066,
+     "high": 7.6166954585903595,
+     "n": 60
+    },
+    "max_decel": {
+     "mean": 4.366451033788306,
+     "low": 3.7598257807956585,
+     "high": 4.9227065500617195,
+     "n": 60
+    },
+    "rms_jerk": {
+     "mean": 5.471278237396814,
+     "low": 4.772903975885135,
+     "high": 6.174628219913124,
+     "n": 60
+    },
+    "intervention_fraction": 0.17010440539852303,
+    "fallback_fraction": 0.02826585179526356,
+    "emergency_fraction": 0.02037178507766743,
+    "episodes": 60
+   },
+   "by_scenario": {
+    "cut_in": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.8409644420753285,
+      "low": 0.7899982767460838,
+      "high": 0.890410430708896,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 6.617982973185701,
+      "low": 6.204828355117845,
+      "high": 7.03538809745918,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 4.828343688343244,
+      "low": 3.999905546410164,
+      "high": 5.609656760298658,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 5.249747085908417,
+      "low": 4.605320563729535,
+      "high": 6.000151793854338,
+      "n": 10
+     },
+     "intervention_fraction": 0.20142857142857143,
+     "fallback_fraction": 0.02857142857142857,
+     "emergency_fraction": 0.002857142857142857,
+     "episodes": 10
+    },
+    "dense_traffic": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5575187742387826,
+      "low": 0.5053384849990091,
+      "high": 0.6079519132865989,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 4.421458420122098,
+      "low": 3.999766426252977,
+      "high": 4.835109226175131,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000002,
+      "low": 6.000000000000001,
+      "high": 6.000000000000002,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.558535391539958,
+      "low": 6.98291171559103,
+      "high": 8.18311019902711,
+      "n": 10
+     },
+     "intervention_fraction": 0.3485714285714286,
+     "fallback_fraction": 0.10714285714285714,
+     "emergency_fraction": 0.08857142857142856,
+     "episodes": 10
+    },
+    "free_road": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.803248106753845,
+      "low": 9.745338332327597,
+      "high": 9.859290560823213,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 0.20899925123145152,
+      "low": 0.07264148171005448,
+      "high": 0.4629364179474264,
+      "n": 10
+     },
+     "intervention_fraction": 0.0017730496453900709,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "lead_brake": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.4303639028298306,
+      "low": 0.34737355365570427,
+      "high": 0.5435176588199513,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.9,
+      "low": 0.7,
+      "high": 1.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 3.440170672184041,
+      "low": 2.7943296642859448,
+      "high": 4.368560721141686,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000001,
+      "low": 6.000000000000001,
+      "high": 6.000000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.769734756226461,
+      "low": 7.057225869953574,
+      "high": 8.484405442213502,
+      "n": 10
+     },
+     "intervention_fraction": 0.15571428571428572,
+     "fallback_fraction": 0.011428571428571429,
+     "emergency_fraction": 0.011428571428571429,
+     "episodes": 10
+    },
+    "occluded_pedestrian": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.55986652835403,
+      "low": 9.402927928967255,
+      "high": 9.706696398076074,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 4.25,
+      "low": 3.2,
+      "high": 5.300000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 6.029545532650312,
+      "low": 4.8736910497169985,
+      "high": 7.2117032160905685,
+      "n": 10
+     },
+     "intervention_fraction": 0.15517241379310345,
+     "fallback_fraction": 0.0017241379310344827,
+     "emergency_fraction": 0.0017241379310344827,
+     "episodes": 10
+    },
+    "static_obstacle": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.9998373054442407,
+      "low": 0.999511916332722,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.9,
+      "low": 0.7,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 8.122374512105738,
+      "low": 7.99992740630128,
+      "high": 8.239673801604518,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 5.120362514386585,
+      "low": 4.24072502877317,
+      "high": 6.000000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 6.011107406824288,
+      "low": 5.303681595453781,
+      "high": 6.623113392347561,
+      "n": 10
+     },
+     "intervention_fraction": 0.12152269399707175,
+     "fallback_fraction": 0.010248901903367497,
+     "emergency_fraction": 0.010248901903367497,
+     "episodes": 10
+    }
+   },
+   "pipeline_ms": 328.32178265466797
+  },
+  "filter_calibrated": {
+   "overall": {
+    "collision_rate": {
+     "mean": 0.0,
+     "low": 0.0,
+     "high": 0.0,
+     "n": 60
+    },
+    "route_completion": {
+     "mean": 0.7985349107646019,
+     "low": 0.733618767164272,
+     "high": 0.8602098917379647,
+     "n": 60
+    },
+    "goal_rate": {
+     "mean": 0.4666666666666667,
+     "low": 0.35,
+     "high": 0.6,
+     "n": 60
+    },
+    "freeze_rate": {
+     "mean": 0.15,
+     "low": 0.06666666666666667,
+     "high": 0.25,
+     "n": 60
+    },
+    "mean_speed": {
+     "mean": 6.926679549638014,
+     "low": 6.28459967157373,
+     "high": 7.58302688080388,
+     "n": 60
+    },
+    "max_decel": {
+     "mean": 4.249229992393824,
+     "low": 3.605897322191807,
+     "high": 4.811642598525395,
+     "n": 60
+    },
+    "rms_jerk": {
+     "mean": 5.518426455740182,
+     "low": 4.79584330532958,
+     "high": 6.222685159683738,
+     "n": 60
+    },
+    "intervention_fraction": 0.17229987293519694,
+    "fallback_fraction": 0.028716645489199492,
+    "emergency_fraction": 0.02210927573062262,
+    "episodes": 60
+   },
+   "by_scenario": {
+    "cut_in": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.8315992290514893,
+      "low": 0.7769028324447484,
+      "high": 0.8827832136343086,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 6.544483221945169,
+      "low": 6.147869886997042,
+      "high": 6.933647459785394,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 4.825017439976357,
+      "low": 3.9912605328313573,
+      "high": 5.5711832345338514,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 6.098711625125694,
+      "low": 5.116200062116568,
+      "high": 7.295830126942684,
+      "n": 10
+     },
+     "intervention_fraction": 0.22,
+     "fallback_fraction": 0.02857142857142857,
+     "emergency_fraction": 0.002857142857142857,
+     "episodes": 10
+    },
+    "dense_traffic": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5438974076556218,
+      "low": 0.4961783003393266,
+      "high": 0.5879285076809356,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 4.304200690456301,
+      "low": 3.9375797757889615,
+      "high": 4.6468064721834414,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000002,
+      "low": 6.000000000000001,
+      "high": 6.000000000000002,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.573036407321199,
+      "low": 6.900965773460422,
+      "high": 8.245036042102926,
+      "n": 10
+     },
+     "intervention_fraction": 0.32571428571428573,
+     "fallback_fraction": 0.10714285714285714,
+     "emergency_fraction": 0.09571428571428571,
+     "episodes": 10
+    },
+    "free_road": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.803248106753845,
+      "low": 9.74630201999404,
+      "high": 9.857834801447572,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 0.20899925123145152,
+      "low": 0.0706326209417793,
+      "high": 0.46331127780736486,
+      "n": 10
+     },
+     "intervention_fraction": 0.0017730496453900709,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "lead_brake": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.42716964868483054,
+      "low": 0.3436396848694507,
+      "high": 0.5412564842646096,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.9,
+      "low": 0.7,
+      "high": 1.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 3.4147964725598334,
+      "low": 2.766538643316581,
+      "high": 4.289325571539224,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000001,
+      "low": 6.000000000000001,
+      "high": 6.000000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.836711043095079,
+      "low": 7.199728995460918,
+      "high": 8.450047888460059,
+      "n": 10
+     },
+     "intervention_fraction": 0.15714285714285714,
+     "fallback_fraction": 0.011428571428571429,
+     "emergency_fraction": 0.011428571428571429,
+     "episodes": 10
+    },
+    "occluded_pedestrian": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.493257411022245,
+      "low": 9.170301828848554,
+      "high": 9.72226949125529,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 3.55,
+      "low": 2.5,
+      "high": 4.6,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 5.429889944020717,
+      "low": 4.475711732216993,
+      "high": 6.4422669344365895,
+      "n": 10
+     },
+     "intervention_fraction": 0.16552901023890784,
+     "fallback_fraction": 0.0034129692832764505,
+     "emergency_fraction": 0.0034129692832764505,
+     "episodes": 10
+    },
+    "static_obstacle": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.9885431791956698,
+      "low": 0.9657922321427685,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.8,
+      "low": 0.5,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 8.000091395090688,
+      "low": 7.7172504196945475,
+      "high": 8.204340076972338,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 5.120362514386585,
+      "low": 4.227647233785924,
+      "high": 5.813858250737686,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 5.963210463646958,
+      "low": 5.330790132257075,
+      "high": 6.514048923788665,
+      "n": 10
+     },
+     "intervention_fraction": 0.12846715328467154,
+     "fallback_fraction": 0.01167883211678832,
+     "emergency_fraction": 0.01167883211678832,
+     "episodes": 10
+    }
+   },
+   "pipeline_ms": 326.38568649136107
+  },
+  "filter_front_dropout": {
+   "overall": {
+    "collision_rate": {
+     "mean": 0.0,
+     "low": 0.0,
+     "high": 0.0,
+     "n": 60
+    },
+    "route_completion": {
+     "mean": 0.6731089055907351,
+     "low": 0.6110353526615586,
+     "high": 0.7354954048174563,
+     "n": 60
+    },
+    "goal_rate": {
+     "mean": 0.16666666666666666,
+     "low": 0.08333333333333333,
+     "high": 0.26666666666666666,
+     "n": 60
+    },
+    "freeze_rate": {
+     "mean": 0.18333333333333332,
+     "low": 0.1,
+     "high": 0.2833333333333333,
+     "n": 60
+    },
+    "mean_speed": {
+     "mean": 5.335622760123531,
+     "low": 4.843615630468623,
+     "high": 5.819965766769172,
+     "n": 60
+    },
+    "max_decel": {
+     "mean": 4.676161583106689,
+     "low": 4.273743043723952,
+     "high": 5.096681354545674,
+     "n": 60
+    },
+    "rms_jerk": {
+     "mean": 5.698461014310791,
+     "low": 5.190770348727322,
+     "high": 6.212058133202699,
+     "n": 60
+    },
+    "intervention_fraction": 0.2824427480916031,
+    "fallback_fraction": 0.11736641221374046,
+    "emergency_fraction": 0.02767175572519084,
+    "episodes": 60
+   },
+   "by_scenario": {
+    "cut_in": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.7706500338653977,
+      "low": 0.7181547246843811,
+      "high": 0.8181766983386576,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 6.065780795181821,
+      "low": 5.616835386326979,
+      "high": 6.43761022348353,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 4.164401404257528,
+      "low": 3.114401404257528,
+      "high": 5.2144014042575275,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 4.867985637894005,
+      "low": 3.9943472898110493,
+      "high": 5.688862727494819,
+      "n": 10
+     },
+     "intervention_fraction": 0.3385714285714286,
+     "fallback_fraction": 0.12714285714285714,
+     "emergency_fraction": 0.004285714285714286,
+     "episodes": 10
+    },
+    "dense_traffic": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5473580697583585,
+      "low": 0.5026352292687029,
+      "high": 0.5922148678474423,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 4.331569728189725,
+      "low": 3.9995929181605883,
+      "high": 4.6884592630455835,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000002,
+      "low": 6.000000000000001,
+      "high": 6.000000000000002,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.966129875837501,
+      "low": 7.283694594904438,
+      "high": 8.572304884958044,
+      "n": 10
+     },
+     "intervention_fraction": 0.34714285714285714,
+     "fallback_fraction": 0.11428571428571428,
+     "emergency_fraction": 0.10285714285714286,
+     "episodes": 10
+    },
+    "free_road": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 8.026495385350533,
+      "low": 7.977340264522691,
+      "high": 8.075651282854354,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 3.2,
+      "low": 2.5,
+      "high": 4.250000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 2.7753122292380703,
+      "low": 2.2223136912032366,
+      "high": 3.567059909650391,
+      "n": 10
+     },
+     "intervention_fraction": 0.20086705202312138,
+     "fallback_fraction": 0.11849710982658959,
+     "emergency_fraction": 0.002890173410404624,
+     "episodes": 10
+    },
+    "lead_brake": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.76177131447791,
+      "low": 0.6245574047589539,
+      "high": 0.8560002518234808,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 5.988998954857015,
+      "low": 5.007163859751913,
+      "high": 6.705845134635268,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 3.6710097251734752,
+      "low": 2.85,
+      "high": 4.650403144135565,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 5.380309104844555,
+      "low": 4.844674106275536,
+      "high": 5.944606359731876,
+      "n": 10
+     },
+     "intervention_fraction": 0.27714285714285714,
+     "fallback_fraction": 0.10857142857142857,
+     "emergency_fraction": 0.004285714285714286,
+     "episodes": 10
+    },
+    "occluded_pedestrian": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.3744211539284554,
+      "low": 0.28689918141458776,
+      "high": 0.48405578366352503,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.7,
+      "low": 0.4,
+      "high": 0.9,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 2.989530654321322,
+      "low": 2.2414310850204386,
+      "high": 3.8493917792949044,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000001,
+      "low": 6.000000000000001,
+      "high": 6.000000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.350282480272149,
+      "low": 6.6188440009977105,
+      "high": 8.057270713199442,
+      "n": 10
+     },
+     "intervention_fraction": 0.24857142857142858,
+     "fallback_fraction": 0.11714285714285715,
+     "emergency_fraction": 0.04,
+     "episodes": 10
+    },
+    "static_obstacle": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5844528615142887,
+      "low": 0.44590277111384796,
+      "high": 0.706880188830861,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.3,
+      "low": 0.0,
+      "high": 0.6,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 4.611361042840772,
+      "low": 3.504379846871513,
+      "high": 5.5670384482693445,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 5.0215583692091315,
+      "low": 3.998815684072885,
+      "high": 5.729302893126189,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 5.850746757778454,
+      "low": 4.942947041215183,
+      "high": 6.698235947231119,
+      "n": 10
+     },
+     "intervention_fraction": 0.2814285714285714,
+     "fallback_fraction": 0.11857142857142858,
+     "emergency_fraction": 0.011428571428571429,
+     "episodes": 10
+    }
+   },
+   "pipeline_ms": 236.46949019241174
+  },
+  "filter_oracle_tracks": {
+   "overall": {
+    "collision_rate": {
+     "mean": 0.0,
+     "low": 0.0,
+     "high": 0.0,
+     "n": 60
+    },
+    "route_completion": {
+     "mean": 0.9053213352023705,
+     "low": 0.8690013935550037,
+     "high": 0.935644067847844,
+     "n": 60
+    },
+    "goal_rate": {
+     "mean": 0.48333333333333334,
+     "low": 0.35,
+     "high": 0.6166666666666667,
+     "n": 60
+    },
+    "freeze_rate": {
+     "mean": 0.016666666666666666,
+     "low": 0.0,
+     "high": 0.05,
+     "n": 60
+    },
+    "mean_speed": {
+     "mean": 7.668438754476132,
+     "low": 7.264705931780775,
+     "high": 8.065409107254618,
+     "n": 60
+    },
+    "max_decel": {
+     "mean": 4.132390683412242,
+     "low": 3.488119867476107,
+     "high": 4.700416981592741,
+     "n": 60
+    },
+    "rms_jerk": {
+     "mean": 5.528256544597544,
+     "low": 4.748465973900229,
+     "high": 6.265909275990019,
+     "n": 60
+    },
+    "intervention_fraction": 0.17443912276279305,
+    "fallback_fraction": 0.011847743887068314,
+    "emergency_fraction": 0.008318628686664987,
+    "episodes": 60
+   },
+   "by_scenario": {
+    "cut_in": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.8734468735971413,
+      "low": 0.8259154208849416,
+      "high": 0.9224759789818988,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 6.873034437266069,
+      "low": 6.4986704765509185,
+      "high": 7.234937326958115,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000002,
+      "low": 6.000000000000001,
+      "high": 6.000000000000002,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 6.963831043801188,
+      "low": 6.459536791047265,
+      "high": 7.468772705330241,
+      "n": 10
+     },
+     "intervention_fraction": 0.19714285714285715,
+     "fallback_fraction": 0.004285714285714286,
+     "emergency_fraction": 0.004285714285714286,
+     "episodes": 10
+    },
+    "dense_traffic": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.7378780880648583,
+      "low": 0.7087602929661877,
+      "high": 0.7735378888410019,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 5.806962744835261,
+      "low": 5.590595780331652,
+      "high": 6.074542454232319,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000002,
+      "low": 6.000000000000001,
+      "high": 6.000000000000002,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 8.770440609082415,
+      "low": 7.856046306839198,
+      "high": 9.645294698134423,
+      "n": 10
+     },
+     "intervention_fraction": 0.2985714285714286,
+     "fallback_fraction": 0.03571428571428571,
+     "emergency_fraction": 0.03571428571428571,
+     "episodes": 10
+    },
+    "free_road": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.803248106753845,
+      "low": 9.74810850786465,
+      "high": 9.856208982961915,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 0.20899925123145152,
+      "low": 0.07113492636986107,
+      "high": 0.4633440765751234,
+      "n": 10
+     },
+     "intervention_fraction": 0.0017730496453900709,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "lead_brake": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.946036593506118,
+      "low": 0.89538102353645,
+      "high": 0.9942809038274589,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.6,
+      "low": 0.3,
+      "high": 0.9,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 7.6369719982886535,
+      "low": 7.147128156824068,
+      "high": 8.095261124142837,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 4.668929854026894,
+      "low": 3.6533467933266666,
+      "high": 5.667256457363562,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 6.845147790237521,
+      "low": 6.244653871416653,
+      "high": 7.4181149485372675,
+      "n": 10
+     },
+     "intervention_fraction": 0.14014598540145987,
+     "fallback_fraction": 0.00291970802919708,
+     "emergency_fraction": 0.00291970802919708,
+     "episodes": 10
+    },
+    "occluded_pedestrian": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.8788155445840342,
+      "low": 0.7409509675002048,
+      "high": 0.9766604445250902,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.6,
+      "low": 0.3,
+      "high": 0.9,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 7.780925110458017,
+      "low": 6.462641500258524,
+      "high": 8.962029675098865,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 5.275414246446557,
+      "low": 4.25,
+      "high": 5.999999999999998,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 6.184022559153503,
+      "low": 5.078984925540256,
+      "high": 7.183061646017157,
+      "n": 10
+     },
+     "intervention_fraction": 0.25235109717868337,
+     "fallback_fraction": 0.004702194357366771,
+     "emergency_fraction": 0.003134796238244514,
+     "episodes": 10
+    },
+    "static_obstacle": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.9957509114620716,
+      "low": 0.9907672997680489,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.7,
+      "low": 0.4,
+      "high": 0.9,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 8.109490129254947,
+      "low": 7.934054523757359,
+      "high": 8.28698712547911,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 2.85,
+      "low": 2.5,
+      "high": 3.55,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 4.1970980140791845,
+      "low": 3.7826080824890935,
+      "high": 4.617675057674458,
+      "n": 10
+     },
+     "intervention_fraction": 0.12794117647058822,
+     "fallback_fraction": 0.020588235294117647,
+     "emergency_fraction": 0.0014705882352941176,
+     "episodes": 10
+    }
+   },
+   "pipeline_ms": 289.72503506872926
+  },
+  "filter_unknown_as_free": {
+   "overall": {
+    "collision_rate": {
+     "mean": 0.0,
+     "low": 0.0,
+     "high": 0.0,
+     "n": 60
+    },
+    "route_completion": {
+     "mean": 0.803796264932357,
+     "low": 0.7415363320210004,
+     "high": 0.8645626567113343,
+     "n": 60
+    },
+    "goal_rate": {
+     "mean": 0.5,
+     "low": 0.36666666666666664,
+     "high": 0.6166666666666667,
+     "n": 60
+    },
+    "freeze_rate": {
+     "mean": 0.15,
+     "low": 0.06666666666666667,
+     "high": 0.25,
+     "n": 60
+    },
+    "mean_speed": {
+     "mean": 7.091885813159558,
+     "low": 6.450574099884852,
+     "high": 7.769679733045847,
+     "n": 60
+    },
+    "max_decel": {
+     "mean": 4.583845164576605,
+     "low": 3.9567368836738166,
+     "high": 5.185076937930077,
+     "n": 60
+    },
+    "rms_jerk": {
+     "mean": 5.5324470725609665,
+     "low": 4.746295851826793,
+     "high": 6.2521532056450955,
+     "n": 60
+    },
+    "intervention_fraction": 0.1441464672511604,
+    "fallback_fraction": 0.02449716348633316,
+    "emergency_fraction": 0.02449716348633316,
+    "episodes": 60
+   },
+   "by_scenario": {
+    "cut_in": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.8349940315520579,
+      "low": 0.7959165854045911,
+      "high": 0.8757379154653093,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 6.572595237503738,
+      "low": 6.255310386628301,
+      "high": 6.884631222490928,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 5.593878886885372,
+      "low": 4.965989452404021,
+      "high": 6.000000000000002,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 6.650484596884508,
+      "low": 5.791285478114905,
+      "high": 7.457542095923736,
+      "n": 10
+     },
+     "intervention_fraction": 0.14857142857142858,
+     "fallback_fraction": 0.004285714285714286,
+     "emergency_fraction": 0.004285714285714286,
+     "episodes": 10
+    },
+    "dense_traffic": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5557439658930566,
+      "low": 0.5050389178774186,
+      "high": 0.6080441848294159,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 4.404640328804951,
+      "low": 3.9986130896125793,
+      "high": 4.825623405514472,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000002,
+      "low": 6.000000000000001,
+      "high": 6.000000000000002,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.505205220607165,
+      "low": 6.977865532200944,
+      "high": 8.092813435488715,
+      "n": 10
+     },
+     "intervention_fraction": 0.33714285714285713,
+     "fallback_fraction": 0.09142857142857143,
+     "emergency_fraction": 0.09142857142857143,
+     "episodes": 10
+    },
+    "free_road": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.803248106753845,
+      "low": 9.744317271117126,
+      "high": 9.861866368255265,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 0.20899925123145152,
+      "low": 0.07076272321886484,
+      "high": 0.4632363787080059,
+      "n": 10
+     },
+     "intervention_fraction": 0.0017730496453900709,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "lead_brake": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.4320395921490269,
+      "low": 0.34545543381252203,
+      "high": 0.5397208611697999,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.9,
+      "low": 0.7,
+      "high": 1.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 3.4532789143375213,
+      "low": 2.813000219245829,
+      "high": 4.292610484950499,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000001,
+      "low": 6.000000000000001,
+      "high": 6.000000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.472904688633773,
+      "low": 6.771713467172542,
+      "high": 8.201359225578473,
+      "n": 10
+     },
+     "intervention_fraction": 0.13142857142857142,
+     "fallback_fraction": 0.025714285714285714,
+     "emergency_fraction": 0.025714285714285714,
+     "episodes": 10
+    },
+    "occluded_pedestrian": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.504510487203545,
+      "low": 9.31826251580205,
+      "high": 9.679095423980815,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 4.699999999999998,
+      "low": 3.2499999999999987,
+      "high": 5.65,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 5.773874993734863,
+      "low": 4.363263367860013,
+      "high": 7.1018540410331505,
+      "n": 10
+     },
+     "intervention_fraction": 0.1404109589041096,
+     "fallback_fraction": 0.005136986301369863,
+     "emergency_fraction": 0.005136986301369863,
+     "episodes": 10
+    },
+    "static_obstacle": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 8.813041804353752,
+      "low": 8.648338221478317,
+      "high": 8.989093474771408,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 5.209192100574256,
+      "low": 4.074888464797409,
+      "high": 6.000000000000002,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 5.583213684274042,
+      "low": 4.3950801504758905,
+      "high": 6.727184115617624,
+      "n": 10
+     },
+     "intervention_fraction": 0.06984126984126984,
+     "fallback_fraction": 0.011111111111111112,
+     "emergency_fraction": 0.011111111111111112,
+     "episodes": 10
+    }
+   },
+   "pipeline_ms": 277.1592660812728
+  },
+  "idm_no_filter": {
+   "overall": {
+    "collision_rate": {
+     "mean": 0.25,
+     "low": 0.15,
+     "high": 0.36666666666666664,
+     "n": 60
+    },
+    "route_completion": {
+     "mean": 0.6929449059573168,
+     "low": 0.6173421459873196,
+     "high": 0.7630108631304785,
+     "n": 60
+    },
+    "goal_rate": {
+     "mean": 0.35,
+     "low": 0.23333333333333334,
+     "high": 0.4666666666666667,
+     "n": 60
+    },
+    "freeze_rate": {
+     "mean": 0.15,
+     "low": 0.06666666666666667,
+     "high": 0.25,
+     "n": 60
+    },
+    "mean_speed": {
+     "mean": 7.535133837814131,
+     "low": 6.89088707826207,
+     "high": 8.089064070899052,
+     "n": 60
+    },
+    "max_decel": {
+     "mean": 4.695009769619309,
+     "low": 4.064571566417725,
+     "high": 5.29688161938031,
+     "n": 60
+    },
+    "rms_jerk": {
+     "mean": 6.106645282809554,
+     "low": 5.183158143452974,
+     "high": 7.049927280786307,
+     "n": 60
+    },
+    "intervention_fraction": 0.0,
+    "fallback_fraction": 0.0,
+    "emergency_fraction": 0.0,
+    "episodes": 60
+   },
+   "by_scenario": {
+    "cut_in": {
+     "collision_rate": {
+      "mean": 0.4,
+      "low": 0.1,
+      "high": 0.7,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.6152428463077778,
+      "low": 0.41590134925004474,
+      "high": 0.8058463077230917,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 7.902182893917429,
+      "low": 6.980588744506332,
+      "high": 8.834971509195626,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 4.8000000000000025,
+      "low": 3.0000000000000013,
+      "high": 6.0000000000000036,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 4.714237741852945,
+      "low": 2.9446674226448195,
+      "high": 6.4855407864442505,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "dense_traffic": {
+     "collision_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5255445592845434,
+      "low": 0.4831341004402996,
+      "high": 0.572348459394359,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.4,
+      "low": 0.1,
+      "high": 0.7,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 4.517026237436325,
+      "low": 3.8810093903868186,
+      "high": 5.44387749820719,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000001,
+      "low": 6.000000000000001,
+      "high": 6.000000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.391180103132515,
+      "low": 6.283582907506486,
+      "high": 8.483809676873475,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "free_road": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.799646016763795,
+      "low": 9.744933881057518,
+      "high": 9.857078276377141,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 0.08624189959041992,
+      "low": 0.06812527461078362,
+      "high": 0.10379149577043234,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "lead_brake": {
+     "collision_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5916756379366737,
+      "low": 0.42454068387885174,
+      "high": 0.7641776475229529,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.5,
+      "low": 0.2,
+      "high": 0.8,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 5.082699842336605,
+      "low": 3.634122952015516,
+      "high": 6.535421241266158,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000001,
+      "low": 6.000000000000001,
+      "high": 6.000000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.69870676104239,
+      "low": 6.749389976956054,
+      "high": 8.586239372320842,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "occluded_pedestrian": {
+     "collision_rate": {
+      "mean": 0.8,
+      "low": 0.5,
+      "high": 1.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.4881803732019533,
+      "low": 0.3700107795801222,
+      "high": 0.6481193823863447,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.029945408790226,
+      "low": 8.461974543835138,
+      "high": 9.405496979009017,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000002,
+      "low": 6.0,
+      "high": 6.000000000000004,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 9.693064739910374,
+      "low": 7.958945442120944,
+      "high": 11.562500059845734,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "static_obstacle": {
+     "collision_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.9370260190129527,
+      "low": 0.8110780570388579,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.9,
+      "low": 0.7,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 8.879302627640406,
+      "low": 8.672092279603284,
+      "high": 9.061879568216577,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 5.370058617715853,
+      "low": 4.475434291566565,
+      "high": 6.000000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.056440451328678,
+      "low": 5.65563559000554,
+      "high": 8.534175587077414,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    }
+   },
+   "pipeline_ms": 354.0981788961905
+  },
+  "idm_no_filter_front_dropout": {
+   "overall": {
+    "collision_rate": {
+     "mean": 0.31666666666666665,
+     "low": 0.2,
+     "high": 0.43333333333333335,
+     "n": 60
+    },
+    "route_completion": {
+     "mean": 0.6109608519327837,
+     "low": 0.5394415107217282,
+     "high": 0.6860735782420547,
+     "n": 60
+    },
+    "goal_rate": {
+     "mean": 0.23333333333333334,
+     "low": 0.13333333333333333,
+     "high": 0.35,
+     "n": 60
+    },
+    "freeze_rate": {
+     "mean": 0.18333333333333332,
+     "low": 0.08333333333333333,
+     "high": 0.2837499999999977,
+     "n": 60
+    },
+    "mean_speed": {
+     "mean": 7.203527851775595,
+     "low": 6.543454348122338,
+     "high": 7.8165265093433005,
+     "n": 60
+    },
+    "max_decel": {
+     "mean": 4.24211637271363,
+     "low": 3.5421163727136307,
+     "high": 4.926743299505206,
+     "n": 60
+    },
+    "rms_jerk": {
+     "mean": 5.865773924533019,
+     "low": 4.897056016526285,
+     "high": 6.882829240041353,
+     "n": 60
+    },
+    "intervention_fraction": 0.0,
+    "fallback_fraction": 0.0,
+    "emergency_fraction": 0.0,
+    "episodes": 60
+   },
+   "by_scenario": {
+    "cut_in": {
+     "collision_rate": {
+      "mean": 0.5,
+      "low": 0.2,
+      "high": 0.8,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.57329573692609,
+      "low": 0.3786141207602371,
+      "high": 0.7698825712752781,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 8.249580887684955,
+      "low": 7.354826528483136,
+      "high": 9.102678886671049,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 4.200000000000004,
+      "low": 2.4000000000000012,
+      "high": 6.0000000000000036,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 4.641718737988464,
+      "low": 2.5763265780691866,
+      "high": 6.820287681082531,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "dense_traffic": {
+     "collision_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5323652215459549,
+      "low": 0.4897352151390642,
+      "high": 0.5840169696760239,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.2,
+      "low": 0.0,
+      "high": 0.5,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 4.488009174287648,
+      "low": 3.9142003765859914,
+      "high": 5.203532415795758,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000001,
+      "low": 6.000000000000001,
+      "high": 6.000000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 8.577746774745972,
+      "low": 7.277356870702716,
+      "high": 9.884815133364931,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "free_road": {
+     "collision_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.799646016763795,
+      "low": 9.742048150916359,
+      "high": 9.85485139677529,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 0.08624189959041992,
+      "low": 0.06940516806915571,
+      "high": 0.10298955820402399,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "lead_brake": {
+     "collision_rate": {
+      "mean": 0.2,
+      "low": 0.0,
+      "high": 0.5,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5435771238364907,
+      "low": 0.36831032276980935,
+      "high": 0.725350718542794,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.2,
+      "low": 0.0,
+      "high": 0.5,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.5,
+      "low": 0.2,
+      "high": 0.8,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 5.431903885123774,
+      "low": 3.9644484639365025,
+      "high": 6.820249864908857,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 5.652698236281776,
+      "low": 4.958094708845327,
+      "high": 6.000000000000001,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 7.212872985203269,
+      "low": 6.16969056875116,
+      "high": 8.07585054831274,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "occluded_pedestrian": {
+     "collision_rate": {
+      "mean": 0.9,
+      "low": 0.7,
+      "high": 1.0,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.43610276483038524,
+      "low": 0.36050410612487277,
+      "high": 0.5697785207878115,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 9.39893045053355,
+      "low": 9.092728724923987,
+      "high": 9.684513690226291,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 3.6000000000000014,
+      "low": 1.8000000000000007,
+      "high": 5.400000000000002,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 5.58961783262276,
+      "low": 2.5758125842333435,
+      "high": 8.679063071827969,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    },
+    "static_obstacle": {
+     "collision_rate": {
+      "mean": 0.2,
+      "low": 0.0,
+      "high": 0.4,
+      "n": 10
+     },
+     "route_completion": {
+      "mean": 0.5804242644577812,
+      "low": 0.4026643949208296,
+      "high": 0.7610650883553913,
+      "n": 10
+     },
+     "goal_rate": {
+      "mean": 0.1,
+      "low": 0.0,
+      "high": 0.3,
+      "n": 10
+     },
+     "freeze_rate": {
+      "mean": 0.4,
+      "low": 0.1,
+      "high": 0.7,
+      "n": 10
+     },
+     "mean_speed": {
+      "mean": 5.853096696259852,
+      "low": 4.237704661561432,
+      "high": 7.518519701072691,
+      "n": 10
+     },
+     "max_decel": {
+      "mean": 6.000000000000002,
+      "low": 6.000000000000001,
+      "high": 6.000000000000002,
+      "n": 10
+     },
+     "rms_jerk": {
+      "mean": 9.086445317047232,
+      "low": 8.378321650693639,
+      "high": 9.872791655260786,
+      "n": 10
+     },
+     "intervention_fraction": 0.0,
+     "fallback_fraction": 0.0,
+     "emergency_fraction": 0.0,
+     "episodes": 10
+    }
+   },
+   "pipeline_ms": 233.93357177355978
+  }
+ },
+ "perception": {
+  "occupancy": {
+   "false_free_rate": 0.011268378398880228,
+   "gt_marked_occupied": 0.0402838861534045,
+   "gt_marked_unknown_or_outside": 0.9484477354477153,
+   "occupied_precision": 0.8680946064504245
+  },
+  "tracking": {
+   "recall": 0.7980814225549836,
+   "mean_position_error_m": 1.0012188365686494,
+   "mean_velocity_error_mps": 0.8473083763135312,
+   "id_switches": 131,
+   "false_track_frames": 672,
+   "mean_nees_4dof": 27.627758483376972,
+   "nees_note": "A consistent 4-state filter has mean NEES near 4."
+  },
+  "forecast": {
+   "horizons_s": [
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.25,
+    2.5,
+    2.75,
+    3.0
+   ],
+   "agent_iou": {
+    "forecast": [
+     0.38944476152474655,
+     0.3767911504332989,
+     0.3631081830199139,
+     0.3483785840601372,
+     0.3331846993548533,
+     0.31606448809929194,
+     0.2934479199115558,
+     0.2713868827544811,
+     0.2516580370188326,
+     0.23522456934850525,
+     0.2271477082405003,
+     0.2278554540173933
+    ],
+    "persistence": [
+     0.2800697535679868,
+     0.17819317558050968,
+     0.15230679515524773,
+     0.15204490370827817,
+     0.1564795214384272,
+     0.1641241337227041,
+     0.17174235546797156,
+     0.17698848975745474,
+     0.1777099693501877,
+     0.1727056068139921,
+     0.16680322746399656,
+     0.16735151112931088
+    ]
+   },
+   "brier_on_relevant_cells": [
+    0.24822425220464908,
+    0.22832078718791426,
+    0.21116948009346914,
+    0.19579714315492844,
+    0.18147116523087728,
+    0.1687312179928945,
+    0.15761741737008483,
+    0.14759896092029165,
+    0.13809296485499664,
+    0.12900416942056717,
+    0.11981269244375958,
+    0.11163805582995624
+   ],
+   "mean_displacement_error_m": [
+    1.788692548158775,
+    1.8832532559424682,
+    1.953827885529818,
+    2.050073186672597,
+    2.0983118332914388,
+    2.173680663833853,
+    2.2843185755889515,
+    2.382702916747568,
+    2.4665321770166537,
+    2.548859057475241,
+    2.6142339921704694,
+    2.691384572822293
+   ],
+   "method_note": "agent_iou compares forecast footprints and frozen tracked footprints with true future boxes."
+  }
+ }
+}

@@ -1,0 +1,479 @@
+{
+ "transport": "ros2",
+ "kind": "replay",
+ "sequence": "scene-0553",
+ "source": "nuscenes/v1.0-mini",
+ "provenance": "recorded",
+ "frames": 41,
+ "ros_distro": "jazzy",
+ "rmw": "rmw_fastrtps_cpp",
+ "wall_s": 246.4144794169988,
+ "topic_message_counts": {
+  "tracks": 41,
+  "detections": 41,
+  "forecast": 41,
+  "risk": 41
+ },
+ "stall_frame": null,
+ "decisions": [
+  {
+   "frame": 0,
+   "t": 1535489296.012404,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "e63dd30968ebfa8dcc75349433922fea89cb9df87e9d71016f57797748c1125b"
+  },
+  {
+   "frame": 1,
+   "t": 1535489296.512409,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "d84206fe82b37414f1343da5fa1634b10a93a398ed65e422005bc9bfa8ba8fda"
+  },
+  {
+   "frame": 2,
+   "t": 1535489297.012404,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "aa7fa814dc335e09b8c1952da37de86c0cf823c290a8c872e4e41e352d8d78b5"
+  },
+  {
+   "frame": 3,
+   "t": 1535489297.512404,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "388a5e656b1d884db3196bd2ff66a2822aa3bd39bb41dfec9f4123dd02ed4340"
+  },
+  {
+   "frame": 4,
+   "t": 1535489298.012404,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "4a106cdcd83a9d6739b55e03405e9f11ad2e2d3c23fafc70b78a6b512ca63c02"
+  },
+  {
+   "frame": 5,
+   "t": 1535489298.512404,
+   "status": "modify",
+   "selected": "lane+0.0_v0.0",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "47bc6197d156675aa5b235cc18ab19739d528419219783ce11b99f46cfe2d73d"
+  },
+  {
+   "frame": 6,
+   "t": 1535489299.012404,
+   "status": "modify",
+   "selected": "lane+0.0_v0.0",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "9f25c29431a5f3f9ad4d56bf93da88ade1b25c1f678d6df187b8f85a4a319c82"
+  },
+  {
+   "frame": 7,
+   "t": 1535489299.512404,
+   "status": "modify",
+   "selected": "lane+0.0_v0.0",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "d57afacefe2cc9941de0b9fa781fca9df29e80c5911f65ba443b848af626a25d"
+  },
+  {
+   "frame": 8,
+   "t": 1535489300.012404,
+   "status": "modify",
+   "selected": "lane+0.0_v0.0",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "7400490b991f512cb9a8854c011e688e9abc146b69ec3e76e2d03677409212b7"
+  },
+  {
+   "frame": 9,
+   "t": 1535489300.512404,
+   "status": "modify",
+   "selected": "lane+0.0_v0.0",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "9e7d6950a3bce8afb4dcbdc730ed1c45b0d11aec509b6d7aaa57d0e3940b3e35"
+  },
+  {
+   "frame": 10,
+   "t": 1535489301.012404,
+   "status": "modify",
+   "selected": "lane+0.0_v0.0",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "47a7b435c119def685ab4ea864e8284b888f74f11b030459e53de81abdf3a2f7"
+  },
+  {
+   "frame": 11,
+   "t": 1535489301.512404,
+   "status": "modify",
+   "selected": "lane+0.0_v0.0",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "1584c0c85ad64824bfcf22c0196b8e56c9f09395c99f39954c924648b98c434b"
+  },
+  {
+   "frame": 12,
+   "t": 1535489302.012404,
+   "status": "modify",
+   "selected": "lane+0.0_v0.0",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "e64f6054fb702d95cc9f4caca9433676db4f9e2c07d20b5ce2485e46dff4a339"
+  },
+  {
+   "frame": 13,
+   "t": 1535489302.512404,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "65f4f6892b3097216f327ca0bd69ef7bdcdc2cfb4422c5877cc8b17cc94ddb96"
+  },
+  {
+   "frame": 14,
+   "t": 1535489303.012421,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "436c9d5bff3a61e77c62357cf55adba769905bebc2b5e8cf86fc886b71bca27f"
+  },
+  {
+   "frame": 15,
+   "t": 1535489303.4124038,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "5d444c357f1a38b210285c4fabf3fb320c2ce16658e611794c3da81f067185b6"
+  },
+  {
+   "frame": 16,
+   "t": 1535489303.9124038,
+   "status": "modify",
+   "selected": "lane+0.0_v0.7",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "6b7a6a40fb7220763459a781cd8cf0c807d4c5bbb2e5ae8a65f8ed27e4775420"
+  },
+  {
+   "frame": 17,
+   "t": 1535489304.4124038,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "de505cc3973db683210ce20a190be324a6be879aac79e9cd88709cb9a97a564f"
+  },
+  {
+   "frame": 18,
+   "t": 1535489304.9124038,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "8381c25b82916440d206de17e0901cad146cb15a413ffd49b25c6394ba3a9e5e"
+  },
+  {
+   "frame": 19,
+   "t": 1535489305.4124038,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "f4ff27ef9636c2bdaf37fbf0cc3923ae06a21bebf68e04869a7368a07f88d890"
+  },
+  {
+   "frame": 20,
+   "t": 1535489305.9124038,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "e198fa761b7f04e4aed94044fd37d02dd4c4abc70df3c1e9dab1afa2ced94f3c"
+  },
+  {
+   "frame": 21,
+   "t": 1535489306.4124038,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "76c8ae6e0661ba899cfa40fc4998f4c8d81595f97917f350fbe94a1945a07e81"
+  },
+  {
+   "frame": 22,
+   "t": 1535489306.9124038,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "f1ae4eb30a0d1f4d9088e09b2ba7d5f6451cb137b254e518df3502fccec1b043"
+  },
+  {
+   "frame": 23,
+   "t": 1535489307.4124038,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "92344927eb6206b94209b9805f407905d88f0e6cd25a3de96303aea8a0c3965c"
+  },
+  {
+   "frame": 24,
+   "t": 1535489307.9124038,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "4b7bf3781b6000185a10918440e43ebdbeeb7149b20ab95838fd5e65539f21d1"
+  },
+  {
+   "frame": 25,
+   "t": 1535489308.3624039,
+   "status": "modify",
+   "selected": "lane+0.0_v0.7",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "f4dc52ff472daf2c3afb11ca3d70514bd56ad7bddd42ae557282e693b74d289f"
+  },
+  {
+   "frame": 26,
+   "t": 1535489308.8624039,
+   "status": "modify",
+   "selected": "lane+0.0_v0.7",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "995e7a0440e638c2f9ab57d1cd398d3140ef20a57d6cb9dd76f155bc3c8ad0e9"
+  },
+  {
+   "frame": 27,
+   "t": 1535489309.3624039,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "40b93c48868510ac37889ba4b4db4fb4ec4b85a87e64e3ccd1da9ff6d953ef3e"
+  },
+  {
+   "frame": 28,
+   "t": 1535489309.8624039,
+   "status": "modify",
+   "selected": "lane+0.0_v0.2",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "d929dad6bf252167d4166d02c63fdd59f5ed7aca4f3e0b1f195f123946e70104"
+  },
+  {
+   "frame": 29,
+   "t": 1535489310.3624039,
+   "status": "modify",
+   "selected": "lane+0.0_v0.0",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "c441024a0922777e0bea595a21ab02b16a128e5380bd9de408a589e33b0cc95d"
+  },
+  {
+   "frame": 30,
+   "t": 1535489310.9124038,
+   "status": "modify",
+   "selected": "lane+0.0_v0.0",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "9766021a81a8bdda0f162ed93520a337b123d5104778e84de24a94a6bb0ded25"
+  },
+  {
+   "frame": 31,
+   "t": 1535489311.3624039,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "e446bfdd5f24c3cc2234e350fe42114790f8a5d0c5ef44d51100a5aa247dc7e5"
+  },
+  {
+   "frame": 32,
+   "t": 1535489311.8624039,
+   "status": "modify",
+   "selected": "lane+0.0_v0.2",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "fcfa1b695074ec9d89a6a996b7309f6a53879656426351c56ddc3efd6a2d0e3e"
+  },
+  {
+   "frame": 33,
+   "t": 1535489312.3624039,
+   "status": "modify",
+   "selected": "lane+0.0_v0.2",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "2cc5cbd9ed6d120fa7259630beb1a251ad00c370fba5ea55ace6f2bc7c09c9d1"
+  },
+  {
+   "frame": 34,
+   "t": 1535489312.8624039,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "31554789e4483d7e08aac3d6df30ff6adb0ad152a737e9fd70a0d845e70db3a0"
+  },
+  {
+   "frame": 35,
+   "t": 1535489313.3624039,
+   "status": "modify",
+   "selected": "lane+0.0_v0.4",
+   "reasons": [
+    "NOMINAL_EVENT_SCORE_EXCEEDED"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "4cf01d1cab108f0042fccf4ff9bfc6930ad6bcf1cd4749058a35e204c4e22204"
+  },
+  {
+   "frame": 36,
+   "t": 1535489313.8624039,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "8efd0ba2a2f10f07e72c1fa2ea23963994fcd2487815810ce211840d665f4828"
+  },
+  {
+   "frame": 37,
+   "t": 1535489314.3624039,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "c5af8fea4436060797de9a39ecdf9a88f39b7a8775455413c77b09120cbfa0f1"
+  },
+  {
+   "frame": 38,
+   "t": 1535489314.8624039,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "8e0cd6b3c19cebe0df788580633029b3a60c1ca542897d54b9652a74400c24a1"
+  },
+  {
+   "frame": 39,
+   "t": 1535489315.4124038,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "605152e76f6e22ec0fdbdcbfad8a28b47527a0d3123688e72ac594dd6f53a5c2"
+  },
+  {
+   "frame": 40,
+   "t": 1535489315.9124038,
+   "status": "pass",
+   "selected": "nominal",
+   "reasons": [
+    "NOMINAL_ADMISSIBLE"
+   ],
+   "fallback": null,
+   "occupancy_sha256": "4cc95fb5af60a6a460586a875c506c56ab40a675170b8bcfbe35b7dbb3600942"
+  }
+ ],
+ "scenario": "scene-0553",
+ "seed": 0,
+ "collided_with": null,
+ "ego_x": 0.0,
+ "matches_in_process": true,
+ "occupancy_hashes_compared": true,
+ "in_process_frames": 41,
+ "first_mismatch_frame": null
+}

@@ -1,3 +1,3 @@
-"""ForesightBEV: Metric 3D Bird's-Eye-View Geometric Perception and World Modeling."""
+"""Tavyra: camera-centric occupancy, forecasting and trajectory-risk framework. The import name stays foresightbev."""
 
-__version__ = "0.1.0"
+__version__ = "0.3.0"
